@@ -15,9 +15,10 @@ const pngquant = require("imagemin-pngquant");
 const imagemin = require('gulp-imagemin');
 
 const basePath = './public';
-const assetsPath = `${basePath}/assets`;
+const srcPath = `./src`;
+const assetsPath = `${srcPath}/assets`;
 const buildPath = './build';
-const distPath = `${basePath}/dist`
+const distPath = `${basePath}/assets`
 
 // Live preview server
 const livePreview = (done) => {
@@ -31,6 +32,7 @@ const livePreview = (done) => {
    console.log('----------------------------------------');
    console.log('🤖 DEV:');
    console.log('👀 Live preview ready!');
+   console.log(`👀 http://localhost:3000 to see dev preview!`);
    console.log('----------------------------------------');
 }
 // Trigger reload from browser
@@ -41,6 +43,7 @@ const reloadPreview = (done) => {
    console.log('----------------------------------------');
    console.log('🤖 DEV:');
    console.log('👀 Live preview reloaded!');
+   console.log(`👀 http://localhost:3000 to see dev preview!`);
    console.log('----------------------------------------');
 }
 
