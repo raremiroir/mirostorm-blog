@@ -24,7 +24,8 @@
     "clean": "gulp clean",
     "watch": "gulp watch",
     "dev": "gulp dev",
-    "build": "gulp build"
+    "build": "gulp build",
+    "preview": "gulp preview"
   },
   "author": "Miro Storm Polfliet",
   "license": "MIT",

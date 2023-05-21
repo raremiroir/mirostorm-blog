@@ -44,6 +44,22 @@ const reloadPreview = (done) => {
    console.log('----------------------------------------');
 }
 
+// Build preview
+const buildPreview = (done) => {
+   browserSync.init({
+      server: {
+         baseDir: buildPath,
+         port: 3000,
+      }
+   });
+   done();
+   console.log('----------------------------------------');
+   console.log('🧱 BUILD:');
+   console.log('👀 Build preview ready!');
+   console.log(`👀 'npm run preview' or 'gulp preview' to see the build!`);
+   console.log('----------------------------------------');
+}
+
 // PARSING TASKS
 const gen = {
 
@@ -86,8 +102,8 @@ const gen = {
       },
       // IMG
       img: (d) => {
-         src(`${assetsPath}/img/raw/**/*`)
-            .pipe(dest(`${distPath}/`));
+         src(`${assetsPath}/img/**/*`)
+            .pipe(dest(`${distPath}/img/`));
          d();
          console.log('----------------------------------------');
          console.log('🤖 DEV:');
@@ -149,7 +165,7 @@ const gen = {
       },
       // IMG
       img: (d) => {
-         src(`${assetsPath}/img/raw/**/*`)
+         src(`${assetsPath}/img/**/*`)
          .pipe(imagemin([
             pngquant({ quality: [0.6, 0.8] }),
             mozjpeg({ quality: 70 }),
@@ -169,7 +185,7 @@ const watchAll = () => {
    watch( `${basePath}/**/*.html`,        series(gen.dev.css, reloadPreview) );
    watch( `${assetsPath}/css/*.scss`,  series(gen.dev.css, reloadPreview) );
    watch( `${assetsPath}/js/*`,     series(gen.dev.js,  reloadPreview) );
-   watch( `${assetsPath}/img/raw/**/*`,   series(gen.dev.img, reloadPreview) );
+   watch( `${assetsPath}/img/**/*`,   series(gen.dev.img, reloadPreview) );
    console.log('----------------------------------------');
    console.log('🤖 DEV:');
    console.log('👁️ Watching for changes...');
@@ -194,6 +210,7 @@ task('build:css', gen.build.css);
 task('build:js', gen.build.js);
 task('build:img', gen.build.img);
 
+task('preview', buildPreview);
 task('watch', watchAll);
 task('clean', series(
    gen.dev.clean,
