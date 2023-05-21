@@ -2,10 +2,13 @@
   "name": "y",
   "version": "1.0.0",
   "description": "Miro Storm - Blog - for KdG",
-  "main": "public/assets/js/main.js",
+  "main": "public/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Miro Storm Polfliet",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
 }
