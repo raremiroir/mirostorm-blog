@@ -1,25 +1,35 @@
 const navbarTemplate = document.createElement('template');
 navbarTemplate.innerHTML = `
-   <div>
+   <div class="nav-wrap">
       <nav>
          <ul>
             <li>
-               <a href="#home">Home</a>
-               <a href="#product">Product</a>
-               <a href="#about">About</a>
-               <a href="#contact">Contact</a>
+               <a-button type="transp" href="#home">Home</a-button>
+               <a-button type="transp" href="#product">Product</a-button>
+               <a-button type="transp" href="#about">About</a-button>
+               <a-button type="transp" href="#contact">Contact</a-button>
             </li>
          </ul>
       </nav>
    </div>
    <style>
-      h2 {
-         color: blue;
+      .nav_wrap {
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+      nav {
+         width: fit-content;
+         margin: 0 auto;
+      }
+      li {
+         list-style: none;
       }
    </style>
 `;
 
-class NavBar extends HTMLElement {
+class MoleculeNavbar extends HTMLElement {
    constructor() {
       super();
 
@@ -32,4 +42,4 @@ class NavBar extends HTMLElement {
    }
 }
 
-window.customElements.define('nav-bar', NavBar);
+window.customElements.define('m-navbar', MoleculeNavbar);
