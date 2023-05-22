@@ -1,5 +1,4 @@
-const testFunction = () => {
-   var test = "test";
-   console.log(test);
-   return test;
-}
+
+window.addEventListener('DOMContentLoaded', (event) => {
+   console.log('DOM fully loaded and parsed')
+})
