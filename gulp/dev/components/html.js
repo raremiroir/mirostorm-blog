@@ -3,7 +3,7 @@
 const { src, dest, task } = require('gulp');
 const fileInclude = require('gulp-file-include');
 
-task('components:html', async (d) => {
+task('dev:components:html', (d) => {
    src([                           // Get all html files
       `src/routes/**/*.html`,       // from routes folder
       `src/routes/*.html`,       // from routes folder

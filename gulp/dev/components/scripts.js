@@ -4,8 +4,8 @@ const { src, dest, task } = require('gulp');
 const concat = require('gulp-concat');
 const uglify = require('gulp-terser');
 
-task('components:js', (d) => {
-   src('src/components/3_Molecules/*.js')
+task('dev:components:js', (d) => {
+   src('src/components/**/*.js')
       .pipe(concat({ path: 'components.js' }))
       .pipe(uglify())
       .pipe(dest('./public/'));
