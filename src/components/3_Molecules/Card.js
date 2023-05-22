@@ -10,7 +10,7 @@ cardTemplate.innerHTML = `
    </style>
 `;
 
-class BaseCard extends HTMLElement {
+class MoleculeCard extends HTMLElement {
    constructor() {
       super();
 
@@ -23,4 +23,4 @@ class BaseCard extends HTMLElement {
    }
 }
 
-window.customElements.define('base-card', BaseCard);
+window.customElements.define('m-card', MoleculeCard);
