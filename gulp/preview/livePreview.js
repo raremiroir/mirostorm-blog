@@ -1,6 +1,6 @@
 'use strict';
 
-const { task } = require('gulp');
+const { task, series } = require('gulp');
 const browserSync = require('browser-sync').create();
 
 task('preview:dev', (d) => {
@@ -10,11 +10,14 @@ task('preview:dev', (d) => {
          port: 3000,
       }
    });
-   d();                       // Done
    
    console.log('----------------------------------------');
    console.log('🤖 DEV:');
    console.log('👀 Live preview ready!');
    console.log(`👀 http://localhost:3000 to see dev preview!`);
    console.log('----------------------------------------');
+   
+   series('watch');
+   
+   d();                       // Done
 });
