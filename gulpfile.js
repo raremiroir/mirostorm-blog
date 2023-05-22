@@ -8,40 +8,35 @@ requireDir('./gulp/preview');
 requireDir('./gulp/dev/components');
 
 // COMPONENTS
-task('components', series('components:html', 'components:js'));
+task('dev:components', series('dev:components:html', 'dev:components:js'));
 
 // WATCHER
 task('watch', () => {
-   watch( 
-      [`src/routes/**/*.html`, `src/routes/*.html`],  
-      series('dev:css', 'components:html', 'preview:reload') 
-   );
-   watch( `src/components/**/*.js`, series('components:js',  'preview:reload') );
-   watch( `src/assets/css/*.scss`, series('dev:css',         'preview:reload') );
-   watch( `src/assets/js/*`,       series('dev:js',          'preview:reload') );
-   watch( `src/assets/img/**/*`,   series('dev:img',         'preview:reload') );
-
    console.log('----------------------------------------');
    console.log('🤖 DEV:');
    console.log('👁️ Watching for changes...');
    console.log('----------------------------------------');
+   
+   watch('src/**/*', series('dev:all', 'preview:reload') );
+   watch( `public/*`, series('preview:reload') );
+
 });
 
 // EXPORT TASKS
 task('clean', series('dev:clean', 'build:clean'));
 
+task('dev:all', parallel('dev:css', 'dev:js', 'dev:img', 'dev:components'));
+task('build:all', parallel('build:css', 'build:js', 'build:img', 'build:components'));
+
 exports.dev = series(
-   'dev:clean',
-   'components',
-   parallel('dev:css', 'dev:js', 'dev:img'),
+   'dev:all',
    'preview:dev',
    'watch'
 )
 
 exports.build = series(
    'build:clean',
-   'build:components',
-   parallel('build:css', 'build:js', 'build:img'),
+   'build:all',
    'build:finish'
 )
 
