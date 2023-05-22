@@ -1,30 +1,33 @@
 const buttonTemplate = document.createElement('template');
 buttonTemplate.innerHTML = `
-   <button class="btn">
+   <a class="btn">
       <slot></slot>
-   </button>
+   </a>
    <style>
     .btn {
       all: unset;
       cursor: pointer;
       border-radius: 0px;
-      font-weight: 500;
-      padding: 10px 30px;
+      font-weight: 400;
+      padding: 1rem 2rem;
       text-align: center;
       text-decoration: none;
       display: inline-block;
-      font-size: 17px;
+      font-size: 1rem;
       border: 2px solid;
+      color: white
     }
     .primary {
       background-color: #4452fe; /* Primary */
       border-color: #4452fe; /* Primary */
-      color: white;
    }
     .outline {
       background-color: transparent;
       border-color: white;
-      color: white;
+    }
+    .transp {
+      background-color: transparent;
+      border-color: transparent;
     }
    </style>
 `;
@@ -40,11 +43,13 @@ class AtomButton extends HTMLElement {
 
       switch (this.getAttribute('type')) {
          case 'primary':
-            this.shadowRoot.querySelector('button').classList.add('primary'); break;
+            this.shadowRoot.querySelector('a').classList.add('primary'); break;
          case 'outline':
-            this.shadowRoot.querySelector('button').classList.add('outline'); break;
+            this.shadowRoot.querySelector('a').classList.add('outline'); break;
+         case 'transp':
+            this.shadowRoot.querySelector('a').classList.add('transp'); break;
          default:
-            this.shadowRoot.querySelector('button').classList.add('primary'); break;
+            this.shadowRoot.querySelector('a').classList.add('primary'); break;
       }
    }
 }
