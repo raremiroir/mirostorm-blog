@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+html { 
+  background-color: #181818;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+  overflow-x: hidden;
+}
+
 h1 {
   font-size: 2em;
   color: red !important;
