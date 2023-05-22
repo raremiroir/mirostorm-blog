@@ -9,6 +9,9 @@
   "bugs": {
     "url": "https://github.com/raremiroir/mirostorm-blog/issues"
   },
+  "homepage": {
+    "url": "https://github.com/raremiroir/mirostorm-blog/readme.md"
+  },
   "keywords": [
     "gulp",
     "sass",
