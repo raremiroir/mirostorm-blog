@@ -6,27 +6,41 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Miro Storm - Blog</title>
    
+   <!-- Fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   <!-- Style -->
    <link rel="stylesheet" href="./assets/app.css">
 
 </head>
 
 <body>
    <!-- BODY -->
-   <nav-bar></nav-bar>
+   <m-navbar></m-navbar>
 
-   <!-- Navigation -->
-   <h1>Bloop Bleep</h1><br/>
-   <h3>Another title!!!</h3>
-   <base-card name="Hello world"></base-card>
-   <base-card name="Bleep"></base-card>
-   <base-card name="Bloop"></base-card>
+   <o-hero>
+      Work at the speed of thought.
+      <p slot="subtext">
+         Most calendars are designed for teams. Slate is designed for freelancers who want a simple way to plan their schedule.
+      </p>
 
-   <a-button>
-      Something
-   </a-button>
-   
+      <div slot="actions" class="flex flex-col md:flex-row gap-4">
+         <a-button>Try for Free</a-button>
+         <a-button type="outline">Learn More</a-button>
+      </div>
+   </o-hero>
 
+   <o-section>
+      <span slot="title">FEATURES</span>
+      <p slot="subtext">
+         Most calendars are designed for teams. Slate is designed for freelancers who want a simple way to plan their schedule.
+      </p>
 
+      <!-- IMAGE HERE -->
+
+      
+   </o-section>
 
    <!-- END BODY -->
    
