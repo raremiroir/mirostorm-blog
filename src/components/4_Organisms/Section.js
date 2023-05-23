@@ -1,7 +1,7 @@
 const sectionTemplate = document.createElement('template');
 sectionTemplate.innerHTML = `
-   <section class="section-wrap">
-      <h2><slot name="title"/></h2>
+   <section>
+      <h2>Title</h2>
       <p>
          <slot name="subtext"/>
       </p>
@@ -10,7 +10,8 @@ sectionTemplate.innerHTML = `
       </div>
    </section>
    <style>
-      .section_wrap {
+      section {
+         margin: 4rem auto;
          width: 85%;
          display: flex;
          flex-direction: column;
@@ -20,17 +21,22 @@ sectionTemplate.innerHTML = `
       h2 {
          text-align: center;
          font-size: 52px;
-         font-weight: 400;
+         line-height: 62px;
+         font-weight: 300;
+         margin: 0 auto;
       }
       p {
          text-align: center;
+         width: 85%;
+         font-size: 1rem;
+         font-weight: 300;
       }
       .content {
          display: flex;
          flex-direction: column;
          justify-content: center;
          align-items: center;
-         gap: 1rem;
+         gap: 2rem;
       }
    </style>
 `;
@@ -43,8 +49,8 @@ class OrganismSection extends HTMLElement {
       const template = sectionTemplate;
       const instance = template.content.cloneNode(true);
       this.shadowRoot.appendChild(instance);
-      // // Props
-      // this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name');
+      // Props
+      this.shadowRoot.querySelector('h2').innerText = this.getAttribute('title');
    }
 }
 
