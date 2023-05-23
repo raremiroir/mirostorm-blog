@@ -1,12 +1,10 @@
-@import '../0_Common/variables.scss';
-@import '../0_Common/mixins.scss';
-@import '../0_Common/functions.scss';
+@import '../0_Common/index.scss';
 
 a {
-   color: $color-primary;
+   color: $color-secondary;
    text-decoration: none;
-   transition: transition(all, 0.3s, ease-in-out);
+   @include transition-fast;
    &:hover {
-      color: darken($color-primary, 10%);
+      color: $color-primary;
    }
 }
