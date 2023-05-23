@@ -37,7 +37,7 @@ $align-items: (
 .flex-center { @include flex-center() }
 .flex-between {
    @include flex(column, nowrap, center, between, $padding-lg);
-   @media (max-width: $breakpoint-md) {
+   @media (min-width: $breakpoint-md) {
       @include flex(row, nowrap, center, center, $padding-lg);
    }
 }
