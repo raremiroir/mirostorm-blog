@@ -5,7 +5,8 @@
 
 section {
    width: $full-width;
-   margin: $padding-3xl auto;
+   margin: 0 auto;
+   padding: $padding-3xl 0;
    @include flex(column, nowrap, center, center, $padding-xl);
 
    .section-header {
