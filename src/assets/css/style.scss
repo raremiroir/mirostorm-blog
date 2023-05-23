@@ -1,23 +1,7 @@
 @import './components/0_Common/index';
 @import './components/1_Fundaments/index';
 @import './components/2_Atoms/index';
-// @import './components/3_Molecules/index';
+@import './components/3_Molecules/index';
 @import './components/4_Organisms/index';
 @import './components/5_Layouts/index';
 // @import './components/6_Pages/index';
-
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 1rem;
-  margin: 1rem 0;
-}
-
-.image-item {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 0.5rem;
-  overflow: hidden;
-}
