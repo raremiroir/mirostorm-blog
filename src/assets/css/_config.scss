@@ -1,0 +1,27 @@
+@use 'sass:map';
+
+$config: (
+   colors: (
+      primary: #4452fe,
+      secondary: #ffffff,
+      success: #43d800,
+      info: #02e4c0,
+      warning: #fb8c00,
+      error: #e53935,
+      surface: #181818,
+      text: #ffffff
+   ),
+   font_family: 'Rubik',
+   spacing_unit: 4px,
+   breakpoints: (
+      xs: 320px,
+      sm: 576px,
+      md: 768px,
+      lg: 1100px,
+      xl: 1400px
+   ),
+   widths: (
+      container: 85%,
+      container_sm: 75%
+   )
+)
