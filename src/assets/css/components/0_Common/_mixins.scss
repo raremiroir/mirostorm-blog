@@ -1,0 +1,55 @@
+// MIXINS
+
+// Center element horizontally and vertically
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Flexbox generator
+@mixin flex($direction, $wrap, $justify-content, $align-items, $gap) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: $gap;
+}
+
+// Grid generator
+@mixin grid($template-rows, $template-columns, $gap) {
+  display: grid;
+  grid-template-rows: $template-rows;
+  grid-template-columns: $template-columns;
+  gap: $gap;
+}
+// Responsive grid generator
+@mixin responsive-grid($template-rows, $template-columns, $gap) {
+  display: grid;
+  grid-template-rows: $template-columns;
+  grid-template-columns: $template-rows;
+  gap: $gap;
+  @media screen and (min-width: $breakpoint-md) {
+    grid-template-rows: $template-rows;
+    grid-template-columns: $template-columns;
+    gap: $gap;
+  }
+}
+
+// Box shadow
+@mixin box-shadow($x, $y, $blur, $spread, $color) {
+  -webkit-box-shadow: $x $y $blur $spread $color;
+  -moz-box-shadow: $x $y $blur $spread $color;
+  box-shadow: $x $y $blur $spread $color;
+}
+
+// Prefixing
+@mixin prefix($property, $value) {
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  -ms-#{$property}: $value;
+  -o-#{$property}: $value;
+  #{$property}: $value;
+}
