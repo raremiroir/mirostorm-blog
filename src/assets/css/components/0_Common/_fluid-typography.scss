@@ -1,0 +1,30 @@
+@use 'sass:math';
+@import './functions.scss';
+
+// FLUID FONT SIZE
+
+// Generate fluid font size (from rem)
+@function fluid-from-rem(
+  $min-font-size, $max-font-size, 
+  $min-screen-width, $max-screen-width,
+  $unit: vw) {
+   $slope: math.div($max-font-size - $min-font-size, $max-screen-width - $min-screen-width);
+   $slope-to-unit: $slope * 100;
+   $intercept: $min-font-size - ($slope * $min-screen-width);
+   @return clamp(#{$min-font-size}, #{$slope-to-unit}#{$unit} + #{$intercept}, #{$max-font-size});
+}
+
+// Generate fluid font size (from px)
+@function fluid(
+  $min-font-size, $max-font-size, 
+  $min-screen-width, $max-screen-width,
+  $unit: vw) {
+    $slope: math.div($max-font-size - $min-font-size, $max-screen-width - $min-screen-width);
+    $slope-to-unit: $slope * 100;
+    
+    $intercept-rem: px-to-rem($min-font-size - ($slope * $min-screen-width));
+    $min-size-rem: px-to-rem($min-font-size);
+    $max-size-rem: px-to-rem($max-font-size);
+
+    @return clamp(#{$min-size-rem}, #{$slope-to-unit}#{$unit} + #{$intercept-rem}, #{$max-size-rem});
+  }
