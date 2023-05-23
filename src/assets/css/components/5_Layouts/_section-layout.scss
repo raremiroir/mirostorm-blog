@@ -1,20 +1,20 @@
-@import '../0_Common/variables.scss';
-@import '../0_Common/functions.scss';
-@import '../0_Common/mixins.scss';
-@import '../1_Fundaments/typography.scss';
+@import '../0_Common/index';
+@import '../1_Fundaments/index';
 
 // SECTION LAYOUT
 
 section {
-   width: $container-width;
-   margin: 0 auto;
+   width: $full-width;
+   margin: $padding-3xl auto;
+   @include flex(column, nowrap, center, center, $padding-xl);
 
-   h2 {
-      width: $base-width;
-   }
-   p {
-      @include text-subheading;
-      width: $base-width;
+   .section-header {
+      @include flex(column, nowrap, center, center, $padding-md);
+      width: $full-width;
+      margin: 0 auto;
       text-align: center;
+      p {
+         @include text-subheading;
+      }
    }
 }
