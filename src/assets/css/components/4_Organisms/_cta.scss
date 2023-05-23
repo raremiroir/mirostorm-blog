@@ -1,0 +1,81 @@
+@import '../0_Common/index';
+@import '../1_Fundaments/index';
+
+// CTA
+
+.cta {
+   width: $full-width;
+   margin: 0 auto;
+   padding: $padding-3xl 0 0;
+   background: lighten($color-surface, 5%);
+
+   @include media-md-up {
+      padding: $padding-3xl 0;
+   }
+   @include media-lg-up {
+      background: $color-surface;
+      padding: $padding-3xl 0;
+   }
+
+   &--inner {
+      @include flex(column, nowrap, center, center, $padding-3xl);
+      width: 90%;
+      margin: 0 auto;
+      
+      @include media-md-up {
+         @include flex(row, nowrap, space-between, center, $padding-2xl);
+         width: 100%;
+      }
+      @include media-lg-up {
+         width: $container-width;
+         background: lighten($color-surface, 5%);
+         border-radius: $rounded-2xl;
+         overflow: hidden;
+      }
+   }
+   &--content {
+      width: 100%;
+      @include flex(column, nowrap, center, center, $padding-xl);
+      @include media-md-up {
+         @include flex(column, nowrap, center, start, $padding-xl);
+         padding-left: $padding-3xl;
+      }
+      h2 {
+         width: $container-width-sm;
+         @include media-md-up {
+            width: $full-width;
+            text-align: start;
+         }
+      }
+   }
+   &--media {
+      width: 100%;
+      height: fit-content;
+      aspect-ratio: 1;
+      overflow: hidden;
+      @include flex(row, nowrap, center, end, 0);
+      position: relative;
+
+      @include media-lg-up {
+         aspect-ratio: 1.2;
+      }
+
+      img {
+         height: 100%;
+         width: auto;
+         object-fit: cover;
+         @include media-md-up {
+            object-fit: contain;
+            height: auto;
+            width: 100%;
+         }
+         @include media-lg-up {
+            object-fit: cover;
+            position: absolute;
+            height: 150%;
+            right: 0;
+            top: $padding-xl;
+         }
+      }
+   }
+}
