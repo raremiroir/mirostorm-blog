@@ -1,0 +1,49 @@
+// Colors
+$color-primary: #4452fe;
+$color-secondary: #ffffff;
+$color-success: #43d800;
+$color-info: #02e4c0;
+$color-warning: #fb8c00;
+$color-error: #e53935;
+$color-surface: #181818;
+
+$color-text: $color-secondary;
+
+// Fonts
+$base-font-size: 16px;
+$base-font-family: 'Rubik', sans-serif;
+
+// Spacing
+$spacing-base: 8px;
+$spacing-unit: 4px;
+$padding-sm: $spacing-base;
+$padding-md: $spacing-base * 2;
+$padding-lg: $spacing-base * 3;
+$padding-xl: $spacing-base * 4;
+$spacing-sizes: (
+   "none": 0,
+   "xs": $spacing-unit,
+   "sm": $padding-sm,
+   "md": $padding-md,
+   "lg": $padding-lg,
+   "xl": $padding-xl
+);
+
+// Breakpoints
+$breakpoint-xs: 320px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-sizes: (
+   "xs": $breakpoint-xs,
+   "sm": $breakpoint-sm,
+   "md": $breakpoint-md,
+   "lg": $breakpoint-lg,
+   "xl": $breakpoint-xl
+);
+
+// Widths
+$base-width: 100%;
+$container-width: 85%;
+$container-width-sm: 75%;
