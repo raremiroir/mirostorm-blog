@@ -19,52 +19,49 @@
    <!-- BODY -->
    <m-navbar></m-navbar>
 
-   <o-hero>
-      Work at the speed of thought.
-      <p slot="subtext">
+   <header>
+      <h1>Work at the speed of thought.</h1>
+      <p>
          Most calendars are designed for teams. Slate is designed for freelancers who want a simple way to plan their schedule.
       </p>
 
-      <div slot="actions" class="flex flex-col md:flex-row gap-4">
-         <a-button>Try for Free</a-button>
-         <a-button type="outline">Learn More</a-button>
+      <div class="flex-row-lg">
+         <button class="btn-primary">Try for Free</button>
+         <button class="btn-outline">Learn More</button>
       </div>
-   </o-hero>
+   </header>
 
-   <o-section title="FEATURES">
-      <p slot="subtext">
+   <section>
+      <h2>FEATURES</h2>
+      <p>
          Most calendars are designed for teams. <br/>
          Slate is designed for freelancers who want a simple way to plan their schedule.
       </p>
 
-      <div class="relative w-full h-full mt-8 mb-12">
-         <img 
-            src="./assets/img/board_chatbot.png" 
-            alt="notifications board screenshot"
-         />
-         <div class="absolute w-full -bottom-16 flex items-center justify-center">
-            <img 
-               class="w-1/2"
-               src="./assets/img/board_linechart.png" 
-               alt="linechart absolute bottom-0 left-"
-            />
+      <div class="flex-between">
+         <div class="img-overlap w-full md__w-2_3">
+            <img src="./assets/img/board_chatbot.png" alt="notifications board screenshot" />
+            <div class="overlapper">
+               <img src="./assets/img/board_linechart.png" alt="linechart absolute bottom-0 left-" />
+            </div>
+         </div>
+   
+         <div class="flex-col-between-center-lg w-full md:w-1_3">
+            <m-card title="A single source of truth" icon="mdi:alien-outline">
+               When you add work to your calendar we automatically calculate useful insights.
+            </m-card>
+      
+            <m-card title="Intuitive Interface" icon="mdi:silverware">
+               When you add work to your calendar we automatically calculate useful insights.
+            </m-card>
+      
+            <m-card title="Or with rules" icon="mdi:infinity">
+               When you add work to your calendar we automatically calculate useful insights.
+            </m-card>
          </div>
       </div>
 
-      <div class="flex flex-col gap-8 w-2/3 items-center justify-center my-8">
-         <m-card title="A single source of truth" icon="mdi:alien-outline">
-            When you add work to your calendar we automatically calculate useful insights.
-         </m-card>
-
-         <m-card title="Intuitive Interface" icon="mdi:silverware">
-            When you add work to your calendar we automatically calculate useful insights.
-         </m-card>
-
-         <m-card title="Or with rules" icon="mdi:infinity">
-            When you add work to your calendar we automatically calculate useful insights.
-         </m-card>
-      </div>
-   </o-section>
+   </section>
 
    <o-section title="Content">
       <p slot="subtext">
