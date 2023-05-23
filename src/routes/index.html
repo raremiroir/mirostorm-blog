@@ -31,97 +31,144 @@
       </div>
    </header>
 
-   <section>
-      <h2>FEATURES</h2>
-      <p>
-         Most calendars are designed for teams. <br/>
-         Slate is designed for freelancers who want a simple way to plan their schedule.
-      </p>
-
-      <div class="flex-between">
-         <div class="img-overlap w-full md__w-2_3">
-            <img src="./assets/img/board_chatbot.png" alt="notifications board screenshot" />
-            <div class="overlapper">
-               <img src="./assets/img/board_linechart.png" alt="linechart absolute bottom-0 left-" />
+   <main>
+      <section>
+         <div class="section-header">
+            <h2>FEATURES</h2>
+            <p>
+               Most calendars are designed for teams. <br/>
+               Slate is designed for freelancers who want a simple way to plan their schedule.
+            </p>
+         </div>
+   
+         <div class="flex-between">
+            <div class="img-overlap w-full md__w-2_3">
+               <img src="./assets/img/board_chatbot.png" alt="notifications board screenshot" />
+               <div class="overlapper">
+                  <img src="./assets/img/board_linechart.png" alt="linechart absolute bottom-0 left-" />
+               </div>
+            </div>
+      
+            <div class="flex-col-between-center-lg w-full md__w-1_3">
+   
+               <div class="card">
+                  <div class="card-header">
+                     <iconify-icon icon="mdi:alien-outline" width="24" height="24"></iconify-icon>
+                     <h3>A single source of truth</h3>
+                  </div>
+                  <p>When you add work to your calendar we automatically calculate useful insights.</p>
+               </div>
+   
+               <div class="card">
+                  <div class="card-header">
+                     <iconify-icon icon="mdi:silverware" style="color: #02e4c0;" width="24" height="24"></iconify-icon>
+                     <h3>Intuitive interface</h3>
+                  </div>
+                  <p>When you add work to your calendar we automatically calculate useful insights.</p>
+               </div>
+   
+               <div class="card">
+                  <div class="card-header">
+                     <iconify-icon icon="mdi:infinity" style="color: #02e4c0;" width="24" height="24"></iconify-icon>
+                     <h3>Or with rules</h3>
+                  </div>
+                  <p>When you add work to your calendar we automatically calculate useful insights.</p>
+               </div>
             </div>
          </div>
    
-         <div class="flex-col-between-center-lg w-full md:w-1_3">
-            <m-card title="A single source of truth" icon="mdi:alien-outline">
-               When you add work to your calendar we automatically calculate useful insights.
-            </m-card>
-      
-            <m-card title="Intuitive Interface" icon="mdi:silverware">
-               When you add work to your calendar we automatically calculate useful insights.
-            </m-card>
-      
-            <m-card title="Or with rules" icon="mdi:infinity">
-               When you add work to your calendar we automatically calculate useful insights.
-            </m-card>
-         </div>
-      </div>
-
-   </section>
-
-   <o-section title="Content">
-      <p slot="subtext">
-         We focus on ergonomics and meeting you where you work. <br/>
-         It's only a keystroke away.
-      </p>
-
-      <m-card bg="white" customHeader="true">
-         <div class="w-2/3 mx-auto text-center flex flex-col gap-12 py-12">
-            <h3 class="w-2/3 text-center mx-auto flex items-center justify-center text-black text-2xl font-medium">
-               Work
-            </h3>
-            <p class="text-gray-600">
-               Ever wondered if you're too reliant on a client for work? Slate helps you identify.
+      </section>
+   
+      <section>
+         <div class="section-header">
+            <h2>Content</h2>
+            <p>
+               We focus on ergonomics and meeting you where you work. <br/>
+               It's only a keystroke away.
             </p>
-            <a-button>
-               Sign Up
-            </a-button>
-            <img 
-               src="./assets/img/macbook-pro.png" 
-               alt="macbook pro"
-            />
          </div>
-      </m-card>
-
-      <m-card bg="white" customHeader="true">
-         <div class="w-2/3 mx-auto text-center flex flex-col gap-12 py-12">
-            <h3 class="w-2/3 text-center mx-auto flex items-center justify-center text-black text-2xl font-medium">
-               Design with real data
-            </h3>
-            <p class="text-gray-600">
-               Ever wondered if you're too reliant on a client for work? Slate helps you identify.
-            </p>
-            <a-button>
-               Try for Free
-            </a-button>
-            <img 
-               class="rounded-2xl"
-               src="./assets/img/board_notifications.png" 
-               alt="macbook pro"
-            />
-         </div>
-      </m-card>
-   </o-section>
-
-   <o-section title="Gallery">
-      <p slot="subtext">
-         We focus on ergonomics and meeting you where you work. <br/>
-         It's only a keystroke away.
-      </p>
-
-      <div class="image-grid" id="image_grid">
-         <!-- Images will be dynamically added here -->
-      </div>
+         <div class="content-cards">
+            <article class="card-alt">
+               <div class="flex-center">
+                  <h3>Work</h3>
+               </div>
+               <p>
+                  Ever wondered if you're too reliant on a client for work? Slate helps you identify.
+               </p>
+               <button class="btn-primary">
+                  Sign Up
+               </button>
       
-      <a-button id="image_grid_loadmore" type="outline">
-         Load More
-      </a-button>
+               <div class="img-wrap">
+                  <img 
+                     src="./assets/img/macbook-pro.png" 
+                     alt="macbook pro"
+                  />
+               </div>
+            </article>
+      
+            <article class="card-alt">
+               <div class="flex-center">
+                  <h3>Design with real data</h3>
+               </div>
+               <p>
+                  Ever wondered if you're too reliant on a client for work? Slate helps you identify.
+               </p>
+               <button class="btn-primary">
+                  Try for Free
+               </button>
+               <div class="img-wrap">
+                  <img 
+                     src="./assets/img/board_notifications.png" 
+                     alt="notifications board screenshot"
+                  />
+               </div>
+            </article>
+         </div>
+      </section>
 
-   </o-section>
+      <section>
+         <div class="section-header">
+            <h2>Gallery</h2>
+            <p>
+               We focus on ergonomics and meeting you where you work. <br/>
+               It's only a keystroke away.
+            </p>
+         </div>
+         <div class="gallery" id="image_grid">
+            <!-- Images will be dynamically added here -->
+         </div>
+         
+         <div class="flex-row-center-xl">
+            <button id="image_grid_loadmore" class="btn-outline">
+               Show More
+            </button>
+            <button id="image_grid_loadless" class="btn-soft">
+               Show Less
+            </button>
+         </div>
+      </section>
+
+      <section>
+         <div class="section-header">
+            <h2>Partners</h2>
+            <p>
+               We focus on ergonomics and meeting you where you work. <br/>
+               It's only a keystroke away.
+            </p>
+         </div>
+         <div class="gallery" id="image_grid">
+            <!-- Images will be dynamically added here -->
+         </div>
+         
+         <div class="flex-row-center-xl">
+            <button class="btn-outline">
+               All Partners
+            </button>
+         </div>
+      </section>
+   </main>
+
 
    <!-- END BODY -->
    
