@@ -10,7 +10,7 @@
    cursor: pointer;
    border-radius: 0;
    padding: $padding-md $padding-xl;
-   border: 2px solid;
+   border: $border-width solid;
    color: $color-text;
    text-decoration: none;
    text-align: center;
@@ -32,6 +32,15 @@
    background-color: transparent;
    &:hover {
       background-color: darken($color-secondary, 85%);
+      color: $color-text;
+   }
+}
+.btn-soft {
+   @include btn-base;
+   border-color: transparent;
+   background-color: darken($color-secondary, 85%);
+   &:hover {
+      background-color: darken($color-secondary, 80%);
       color: $color-text;
    }
 }
