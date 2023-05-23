@@ -1,0 +1,46 @@
+@import '../0_Common/index';
+@import '../1_Fundaments/index';
+
+// CARDS
+
+@mixin card {
+
+}
+
+.card {
+   @include flex(column, nowrap, start, start, $padding-lg);
+   padding: $padding-lg;
+
+   .card-header{
+      @include flex(row, nowrap, start, center, $padding-lg);
+
+      h3 {
+         padding-top: 2px !important;
+      }
+   }
+
+   iconify-icon {
+      color: $color-info;
+   }
+}
+
+.card-alt {
+   @include flex(column, nowrap, center, center, $padding-xl);
+   padding: $padding-xl;
+   border-radius: $rounded-md;
+   background-color: $color-surface-rev;
+   overflow: hidden;
+
+   h3 {
+      color: $color-surface;
+   }
+   p {
+      color: lighten($color-surface, 30%);
+      text-align: center;
+   }
+
+   img {
+      width: 100%;
+      height: auto;
+   }
+}
