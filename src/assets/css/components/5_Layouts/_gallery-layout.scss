@@ -1,0 +1,50 @@
+@import '../0_Common/index';
+@import '../1_Fundaments/index';
+
+// GALLERY LAYOUT
+// ignore this file in purgecss as images are dynamically loaded
+/* purgecss start ignore */
+.gallery {
+   @include flex(column, nowrap, center, center, $padding-xl);
+   width: $full-width;
+
+   .img-wrap {
+      aspect-ratio: 1;
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+
+   @media screen and (min-width: $breakpoint-sm) {
+      @include flex(row, wrap, center, center, $padding-xl);
+      .img-wrap {
+         width: 47%;
+      }
+   }
+   @media screen and (min-width: $breakpoint-md) {
+      @include flex(row, wrap, center, center, $padding-xl);
+      .img-wrap {
+         width: 29%;
+         height: auto;
+      }
+   }
+   @media screen and (min-width: $breakpoint-lg) {
+      .img-wrap {
+         width: fit-content;
+         height: $breakpoint-xs * 0.6;
+         aspect-ratio: unset;
+
+         img {
+            width: auto;
+            height: 100%;
+            object-fit: contain;
+         }
+      }
+   }
+
+}
+/* purgecss end ignore */
