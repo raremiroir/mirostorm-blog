@@ -4,6 +4,7 @@ const { src, dest, task } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
 const purgecss = require('gulp-purgecss');
+const cleanCSS = require('gulp-clean-css');
 const config = require('../../gulp-config');
 
 task('build:css', (d) => {
@@ -18,11 +19,12 @@ task('build:css', (d) => {
       //       return broadMatches.concat(innerMatches)
       //    }
       }))
+      .pipe(cleanCSS())                              // Minify css
       .pipe(dest(`${config.paths.build}/assets/`)); // Output to build folder
-   d();                                             // Done
    console.log('----------------------------------------');
    console.log('🧱 BUILD:');
    console.log(`📦 CSS minified! (find in /${config.paths.build})`);
    console.log('----------------------------------------');
+   return d();                                             // Done
 
 })
