@@ -18,10 +18,10 @@ task('dev:css', (d) => {
       .pipe(concat({ path: 'app.css' }))                 // Concat all css files
       .pipe(purgecss({content: [`${config.paths.src}/**/*.html`]}))      // Remove unused css
       .pipe(dest(`${config.paths.dist}/assets/`));       // Output to dist folder
-   d();                                                  // Done
-   
+      
    console.log('----------------------------------------');
    console.log('🤖 DEV:');
    console.log(`📦 CSS minified! (find in /${config.paths.src}/assets)`);
    console.log('----------------------------------------');
+   return d();                                                  // Done
 });

@@ -26,5 +26,5 @@ task('intro', (d) => {
    console.log('█       run `npm run help` or `gulp` to       █');
    console.log('█            call this menu again             █');
    console.log('█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█');
-   d();
+   return d();
 })

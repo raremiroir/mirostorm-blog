@@ -7,11 +7,11 @@ const config = require('../../gulp-config');
 
 task('build:clean', (d) => {
    src(`${config.paths.build}/*`, { read: false, allowEmpty: true })  // Get all files in build folder
-      .pipe(clean());                                 // Clean build folder
-   d();                                               // Done
-   
+      .pipe(clean());                                                 // Clean build folder
+      
    console.log('----------------------------------------');
    console.log('🧱 BUILD:');
    console.log('🫧 Build Folder Cleaned!');
    console.log('----------------------------------------');
+   return d();                                                       // Done
 });

@@ -23,10 +23,10 @@ task('build:components', (d) => {
       }))
       .pipe(dest(`${config.paths.build}/`));                    // Output to dist folder
 
-   d();                                         // Done
-
    console.log('----------------------------------------');
    console.log('🧱 BUILD:');
    console.log(`📦 Components (HTML & JS) parsed! (find in /${config.paths.build}/components)`);
    console.log('----------------------------------------');
+   return d();                                         // Done
+
 })

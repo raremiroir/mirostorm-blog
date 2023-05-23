@@ -18,10 +18,9 @@ task('build:js', (d) => {
       .pipe(uglify())                        // Minify js
       .pipe(dest(`${config.paths.build}/`)); // Output to dist folder
       
-   d();                                      // Done
-   
    console.log('----------------------------------------');
    console.log('🧱 BUILD:');
    console.log(`📦 JS minified! (find in /${config.paths.build})`);
    console.log('----------------------------------------');
+   return d();                                      // Done
 })

@@ -16,10 +16,10 @@ task('dev:js', (d) => {
       .pipe(concat({ path: 'vendor.js' }))   // Concat all js files
       .pipe(dest(`${config.paths.dist}/`));                // Output to dist folder
 
-   d();                                      // Done
-   
+      
    console.log('----------------------------------------');
    console.log('🤖 DEV:');
    console.log(`📦 JS minified! (find in /${config.paths.dist}`);
    console.log('----------------------------------------');
+   return d();                                      // Done
 });

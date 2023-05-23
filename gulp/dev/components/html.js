@@ -14,10 +14,10 @@ task('dev:components:html', (d) => {
          basepath: '@file',         // from current file
       }))
       .pipe(dest(`${config.paths.dist}/`));       // Output to dist folder
-   d();                            // Done
-   
+      
    console.log('----------------------------------------');
    console.log('🤖 DEV:');
    console.log(`📦 Components (HTML) parsed! (find in /${config.paths.dist})`);
    console.log('----------------------------------------');
+   return d();                            // Done
 })

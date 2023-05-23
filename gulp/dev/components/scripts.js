@@ -10,10 +10,10 @@ task('dev:components:js', (d) => {
       .pipe(concat({ path: `components.js` }))
       .pipe(uglify())
       .pipe(dest(`${config.paths.dist}/`));
-   d();
-   
+      
    console.log('----------------------------------------');
    console.log('🤖 DEV:');
    console.log(`📦 Components (JS) minified! (find in /${config.paths.src})`);
    console.log('----------------------------------------');
+   return d();
 })
