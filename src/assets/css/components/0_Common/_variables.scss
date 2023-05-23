@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use 'sass:math';
 @import '../../config';
 
 // Colors
@@ -9,6 +10,8 @@ $color-info: map.get($config, colors, info);
 $color-warning: map.get($config, colors, warning);
 $color-error: map.get($config, colors, error);
 $color-surface: map.get($config, colors, surface);
+$color-surface-rev: map.get($config, colors, surface_rev);
+
 $color-text: map.get($config, colors, text);
 
 // Fonts
@@ -22,14 +25,29 @@ $padding-sm: $spacing-base;
 $padding-md: $spacing-base * 2;
 $padding-lg: $spacing-base * 3;
 $padding-xl: $spacing-base * 4;
+$padding-2xl: $spacing-base * 6;
+$padding-3xl: $spacing-base * 8;
 $spacing-sizes: (
    "none": 0,
    "xs": $spacing-unit,
    "sm": $padding-sm,
    "md": $padding-md,
    "lg": $padding-lg,
-   "xl": $padding-xl
+   "xl": $padding-xl,
+   "2xl": $padding-2xl,
+   "3xl": $padding-3xl
 );
+
+// Borders
+$border-radius: 0.5rem;
+$rounded-sm: math.div($border-radius, 2);
+$rounded-md: $border-radius;
+$rounded-lg: $border-radius * 2;
+$rounded-xl: $border-radius * 3;
+$rounded-2xl: $border-radius * 4;
+$rounded-3xl: $border-radius * 6;
+
+$border-width: map.get($config, border_width);
 
 // Breakpoints
 $breakpoint-xs: map.get($config, breakpoints, xs);  // Not really used
@@ -46,6 +64,9 @@ $breakpoint-sizes: (
 );
 
 // Widths
-$base-width: 100%;
+$full-width: 100%;
+$base-width: $full-width;
 $container-width: map.get($config, widths, container);
+$container-width-tablet: map.get($config, widths, container_tablet);
+$container-width-desktop: map.get($config, widths, container_desktop);
 $container-width-sm: map.get($config, widths, container_sm);
