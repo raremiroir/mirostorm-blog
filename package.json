@@ -24,6 +24,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "help": "gulp",
     "clean": "gulp clean",
     "watch": "gulp watch",
     "dev": "gulp dev",

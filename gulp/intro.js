@@ -22,6 +22,9 @@ task('intro', (d) => {
    console.log('█ 🧱 gulp build                   build files █');
    console.log('█ 🫧  gulp clean         clean dev/build files █');
    console.log('█ 👀 gulp preview         preview build files █');
+   console.log('█---------------------------------------------█');
+   console.log('█       run `npm run help` or `gulp` to       █');
+   console.log('█            call this menu again             █');
    console.log('█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█');
    d();
 })
