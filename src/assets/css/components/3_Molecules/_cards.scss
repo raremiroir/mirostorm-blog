@@ -3,10 +3,6 @@
 
 // CARDS
 
-@mixin card {
-
-}
-
 .card {
    @include flex(column, nowrap, start, start, $padding-lg);
    padding: $padding-lg;
