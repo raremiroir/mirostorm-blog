@@ -1,0 +1,22 @@
+@import '../0_Common/variables.scss';
+@import '../0_Common/functions.scss';
+@import '../0_Common/mixins.scss';
+@import '../1_Fundaments/typography.scss';
+
+// HEADER
+
+header {
+   width: $base-width;
+   @include flex(column, none, center, center, 1rem);
+   background: linear-gradient(0deg, rgba(14,14,14,1) 0%, rgba(255,255,255,0) 100%);
+   padding: 1rem auto;
+
+   h1, p {
+      width: $container-width;
+      text-align: center;
+   }
+   p {
+      @include text-subheading;
+      margin-top: $spacing-base;
+   }
+}
