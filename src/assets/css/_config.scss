@@ -9,10 +9,12 @@ $config: (
       warning: #fb8c00,
       error: #e53935,
       surface: #181818,
+      surface_rev: #ffffff,
       text: #ffffff
    ),
    font_family: 'Rubik',
    spacing_unit: 4px,
+   border_width: 2px,
    breakpoints: (
       xs: 320px,
       sm: 576px,
@@ -22,6 +24,8 @@ $config: (
    ),
    widths: (
       container: 85%,
-      container_sm: 75%
+      container_tablet: 80%,
+      container_desktop: 70%,
+      container_sm: 60%
    )
 )
