@@ -2,15 +2,12 @@
 
 const { src, dest, task } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
-const postcss = require('gulp-postcss');
 const concat = require('gulp-concat');
 const purgecss = require('gulp-purgecss');
 const config = require('../../gulp-config');
 
 
 task('dev:css', (d) => {
-   // const tailwindcss = require('tailwindcss');
-   // const autoprefixer = require('autoprefixer');
    src([                                            // Get all scss files
       `${config.paths.src}/assets/css/*.scss`,      // Include scss files
       `${config.paths.src}/assets/css/**/*.scss`,
@@ -18,7 +15,6 @@ task('dev:css', (d) => {
       `!${config.paths.src}/assets/css/**/_*.scss`,
    ])
       .pipe(sass().on('error', sass.logError))           // Parse sass
-      // .pipe(postcss([tailwindcss(), autoprefixer()]))    // Parse tailwindcss + autoprefixer
       .pipe(concat({ path: 'app.css' }))                 // Concat all css files
       .pipe(purgecss({content: [`${config.paths.src}/**/*.html`]}))      // Remove unused css
       .pipe(dest(`${config.paths.dist}/assets/`));       // Output to dist folder
