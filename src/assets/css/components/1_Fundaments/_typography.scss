@@ -13,8 +13,8 @@ h1, h2, h3, h4, h5, h6, p, blockquote {
    line-height: #{fluid(56px, 88px, $breakpoint-xs, $breakpoint-xl)};
 }
 @mixin text-xl {
-   font-size: #{fluid(40px, 52px, $breakpoint-xs, $breakpoint-xl)};
-   line-height: #{fluid(48px, 62px, $breakpoint-xs, $breakpoint-xl)};
+   font-size: #{fluid(36px, 52px, $breakpoint-xs, $breakpoint-xl)};
+   line-height: #{fluid(42px, 62px, $breakpoint-xs, $breakpoint-xl)};
 }
 @mixin text-lg {
    font-size: #{fluid(16px, 20px, $breakpoint-xs, $breakpoint-xl)};
