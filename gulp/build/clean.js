@@ -3,9 +3,10 @@
 const { src, dest, task } = require('gulp');
 const clean = require('gulp-clean');
 
+const config = require('../../gulp-config');
 
 task('build:clean', (d) => {
-   src(`build/*`, { read: false, allowEmpty: true })  // Get all files in build folder
+   src(`${config.paths.build}/*`, { read: false, allowEmpty: true })  // Get all files in build folder
       .pipe(clean());                                 // Clean build folder
    d();                                               // Done
    
