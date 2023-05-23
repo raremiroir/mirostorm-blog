@@ -1,0 +1,42 @@
+@import '../0_Common/variables.scss';
+@import '../0_Common/mixins.scss';
+@import '../0_Common/transitions.scss';
+@import '../1_Fundaments/typography.scss';
+
+// BUTTONS
+@mixin btn-base {
+   @include text-button;
+   @include transition-fast;
+   cursor: pointer;
+   border-radius: 0;
+   padding: $padding-md $padding-xl;
+   border: 2px solid;
+   color: $color-text;
+   text-decoration: none;
+   text-align: center;
+   display: inline-block;
+}
+
+.btn-primary {
+   @include btn-base;
+   border-color: $color-primary;
+   background-color: $color-primary;
+   &:hover {
+      background-color: darken($color-primary, 5%);
+      border-color: darken($color-primary, 5%);
+   }
+}
+.btn-outline {
+   @include btn-base;
+   border-color: $color-secondary;
+   background-color: transparent;
+   &:hover {
+      background-color: darken($color-secondary, 85%);
+      color: $color-text;
+   }
+}
+.btn-transp {
+   @include btn-base;
+   border-color: transparent;
+   background-color: transparent;
+}
