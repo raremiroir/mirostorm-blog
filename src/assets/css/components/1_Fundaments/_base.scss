@@ -19,4 +19,16 @@ body {
    color: $color-text;
    margin: 0;
    padding: 0;
+   width: $full-width;
+}
+
+main {
+   margin: 0 auto;
+   width: $container-width;
+   @media (min-width: $breakpoint-md) {
+      width: $container-width-tablet;
+   }
+   @media (min-width: $breakpoint-lg) {
+      width: $container-width-desktop;
+   }
 }
