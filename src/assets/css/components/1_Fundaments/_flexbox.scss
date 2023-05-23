@@ -1,0 +1,71 @@
+@import '../0_Common/variables.scss';
+@import '../0_Common/mixins.scss';
+@import '../0_Common/transitions.scss';
+
+// FLEXBOX
+$directions: (
+   "row": row,
+   "row-rev": row-reverse,
+   "col": column,
+   "col-rev": column-reverse
+);
+$wraps: (
+   "nowrap": nowrap, 
+   "wrap": wrap, 
+   "wrap-rev": wrap-reverse
+);
+$justify-contents: (
+   "start": flex-start, 
+   "end": flex-end, 
+   "center": center,
+   "between": space-between, 
+   "around": space-around, 
+   "evenly": space-evenly
+);
+$align-items: (
+   "stretch": stretch, 
+   "start": flex-start, 
+   "end": flex-end, 
+   "center": center, 
+   "baseline": baseline
+);
+
+// Flexbox centering
+@mixin flex-center($gap: 0) {
+   @include flex(row, wrap, center, center, $gap);
+}
+.flex-center { @include flex-center() }
+.flex-between {
+   @include flex(column, nowrap, center, between, $padding-lg);
+   @media (max-width: $breakpoint-md) {
+      @include flex(row, nowrap, center, center, $padding-lg);
+   }
+}
+
+// Flexbox classes
+@each $direction-name, $direction in $directions {
+   .flex-#{$direction-name} {
+      @include flex($direction, nowrap, center, center, 0);
+   }
+   @each $gap-name, $gap in $spacing-sizes {
+      .flex-#{$direction-name}-#{$gap-name} {
+         @include flex($direction, nowrap, center, center, $gap);
+      }
+
+      @each $justify-name, $justify in $justify-contents {
+         .flex-#{$direction-name}-#{$justify-name}-#{$gap-name} {
+            @include flex($direction, nowrap, $justify, center, $gap);
+         }
+         @each $align-name, $align in $align-items {
+            .flex-#{$direction-name}-#{$justify-name}-#{$align-name}-#{$gap-name} {
+               @include flex($direction, nowrap, $justify, $align, $gap);
+            }
+            @each $wrap-name, $wrap in $wraps {
+               .flex-#{$direction-name}-#{$wrap-name}-#{$justify-name}-#{$align-name}-#{$gap-name} {
+                  @include flex($direction, $wrap, $justify, $align, $gap);
+               }
+            }
+         }
+      }
+   }
+}
