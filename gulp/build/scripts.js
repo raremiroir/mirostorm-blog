@@ -3,26 +3,25 @@
 const { src, dest, task } = require('gulp');
 const concat = require('gulp-concat');
 const uglify = require('gulp-terser');
+const config = require('../../gulp-config');
 
 task('build:js', (d) => {
    // Main js files
-   src('src/assets/js/**/*.js')           // Get all js files
+   src(`${config.paths.src}/assets/js/**/*.js`)           // Get all js files
       .pipe(concat({ path: 'app.js' }))   // Concat all js files
       .pipe(uglify())                     // Minify js
-      .pipe(dest('./build/assets/'));            // Output to dist folder
+      .pipe(dest(`${config.paths.build}/assets/`));            // Output to dist folder
 
    // Node modules
-   src([                                  // Get required modules
-      'node_modules/iconify-icon/dist/iconify-icon.min.js',
-   ])
-      .pipe(concat({ path: 'vendor.js' }))// Concat all js files
-      .pipe(uglify())                     // Minify js
-      .pipe(dest('./build/'));            // Output to dist folder
+   src(config.vendor)
+      .pipe(concat({ path: 'vendor.js' }))   // Concat all js files
+      .pipe(uglify())                        // Minify js
+      .pipe(dest(`${config.paths.build}/`)); // Output to dist folder
       
-   d();                                   // Done
+   d();                                      // Done
    
    console.log('----------------------------------------');
    console.log('🧱 BUILD:');
-   console.log('📦 JS minified! (find in /build)');
+   console.log(`📦 JS minified! (find in /${config.paths.build})`);
    console.log('----------------------------------------');
 })
