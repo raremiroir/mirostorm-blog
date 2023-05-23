@@ -1,0 +1,17 @@
+@import '../0_Common/index';
+@import '../1_Fundaments/index';
+
+
+// Lists
+ul {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   li {
+      @include text-link;
+      padding: $padding-sm 0;
+      &:last-child {
+         padding-bottom: 0;
+      }
+   }
+}
