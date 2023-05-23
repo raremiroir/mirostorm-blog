@@ -1,0 +1,18 @@
+@import '../0_Common/variables';
+
+// Breakpoints
+@mixin media-xs-up {
+   @media (min-width: $breakpoint-xs) { @content; }
+}
+@mixin media-sm-up {
+   @media (min-width: $breakpoint-sm) { @content; }
+}
+@mixin media-md-up {
+   @media (min-width: $breakpoint-md) { @content; }
+}
+@mixin media-lg-up {
+   @media (min-width: $breakpoint-lg) { @content; }
+}
+@mixin media-xl-up {
+   @media (min-width: $breakpoint-xl) { @content; }
+}
