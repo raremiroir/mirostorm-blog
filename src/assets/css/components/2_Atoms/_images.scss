@@ -1,0 +1,25 @@
+@import '../0_Common/index';
+@import '../1_Fundaments/index';
+
+// IMAGES
+@mixin img {
+   height: auto;
+}
+
+.img-wrap {
+   @include flex(column, nowrap, center, center, 0);
+   overflow: hidden;
+   width: $full-width;
+   height: 100%;
+   border-radius: $rounded-lg;
+}
+
+.img {
+   @include img;
+   max-width: $breakpoint-xl;
+}
+
+.img-fluid {
+   @include img;
+   width: 100%;
+}
