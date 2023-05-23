@@ -46,11 +46,12 @@ p {
 }
 @mixin text-title {
    @include text-lg;
-   font-weight: 400;
+   font-weight: 500;
 }
 @mixin text-subheading {
    @include text-lg;
    font-weight: 200;
+   text-align: center;
 }
 @mixin text-button {
    @include text-md;
@@ -62,7 +63,7 @@ p {
 }
 @mixin text-paragraph {
    @include text-sm;
-   font-weight: 300;
+   font-weight: 400;
 }
 @mixin text-link {
    @include text-sm;
@@ -81,4 +82,11 @@ h1 {
 h2 {
    @include text-subheadline;
    text-align: center;
+}
+h3 {
+   @include text-title;
+}
+
+p {
+   @include text-paragraph;
 }
