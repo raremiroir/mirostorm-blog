@@ -9,7 +9,7 @@ task('build:js', (d) => {
    src('src/assets/js/**/*.js')           // Get all js files
       .pipe(concat({ path: 'app.js' }))   // Concat all js files
       .pipe(uglify())                     // Minify js
-      .pipe(dest('./build/'));            // Output to dist folder
+      .pipe(dest('./build/assets/'));            // Output to dist folder
 
    // Node modules
    src([                                  // Get required modules

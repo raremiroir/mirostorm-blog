@@ -25,7 +25,7 @@ task('build:css', (d) => {
       //    }
       // }))
       .pipe(concat({ path: 'app.css' }))        // Concat all css files
-      .pipe(dest(`build/`));           // Output to build folder
+      .pipe(dest(`build/assets/`));           // Output to build folder
    d();                                         // Done
    console.log('----------------------------------------');
    console.log('🧱 BUILD:');
