@@ -1,6 +1,7 @@
 @import '../0_Common/variables.scss';
 @import '../0_Common/functions.scss';
 @import '../0_Common/mixins.scss';
+@import '../0_Common/breakpoints.scss';
 
 // BASE
 * {
@@ -25,10 +26,11 @@ body {
 main {
    margin: 0 auto;
    width: $container-width;
-   @media (min-width: $breakpoint-md) {
+   max-width: $breakpoint-xl;
+   @include media-md-up {
       width: $container-width-tablet;
    }
-   @media (min-width: $breakpoint-lg) {
+   @include media-lg-up {
       width: $container-width-desktop;
    }
 }
