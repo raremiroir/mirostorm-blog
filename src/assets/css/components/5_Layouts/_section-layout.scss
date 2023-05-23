@@ -1,0 +1,20 @@
+@import '../0_Common/variables.scss';
+@import '../0_Common/functions.scss';
+@import '../0_Common/mixins.scss';
+@import '../1_Fundaments/typography.scss';
+
+// SECTION LAYOUT
+
+section {
+   width: $container-width;
+   margin: 0 auto;
+
+   h2 {
+      width: $base-width;
+   }
+   p {
+      @include text-subheading;
+      width: $base-width;
+      text-align: center;
+   }
+}
