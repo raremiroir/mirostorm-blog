@@ -1,0 +1,52 @@
+@import '../0_Common/index';
+@import '../1_Fundaments/index';
+
+// Footer
+footer {
+   @include flex(column, nowrap, space-between, start, $padding-2xl);
+   width: $container-width-sm;
+   max-width: $breakpoint-xl;
+   margin: 0 auto;
+   padding: $padding-xl 0 $padding-3xl;
+   
+   @include media-md-up {
+      @include flex(row, nowrap, space-between, start, $padding-2xl);
+      width: $container-width-tablet;
+   }
+   @include media-lg-up {
+      @include flex(row, nowrap, space-between, start, $padding-2xl);
+      width: $container-width-desktop;
+   }
+
+   .footer--cols {
+      @include flex(column, nowrap, space-between, start, $padding-2xl);
+      @include media-md-up {
+         @include flex(row, nowrap, space-between, start, $padding-xl);
+      }
+      @include media-lg-up {
+         @include flex(row, nowrap, space-between, start, $padding-3xl);
+      }
+      &__item {
+         @include flex(column, nowrap, start, start, $padding-lg);
+      }
+   }
+
+   .footer--contact {
+      @include flex(column, nowrap, start, start, $padding-lg);
+
+      &__details {
+         @include flex(column, nowrap, start, start, $padding-md);
+         li {
+            @include flex(row, nowrap, start, center, $padding-sm);
+         }
+      }
+      &__socials {
+         @include flex(row, nowrap, start, start, $padding-md);
+
+         li {
+            @include flex-center;
+         }
+      }
+   }
+
+}
