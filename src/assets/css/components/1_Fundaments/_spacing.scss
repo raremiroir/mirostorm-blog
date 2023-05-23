@@ -1,0 +1,25 @@
+@import '../0_Common/variables.scss';
+@import '../0_Common/functions.scss';
+@import '../0_Common/mixins.scss';
+
+// WIDTHS
+$widths: (
+   '1_2': 50%,
+   '1_3': 33.3333333333%, '2_3': 66.6666666667%,
+   '1_4': 25%, '2_4': 50%, '3_4': 75%,
+   '1_5': 20%, '2_5': 40%, '3_5': 60%, '4_5': 80%,
+   '1_6': 16.6666666667%, '2_6': 33.3333333333%, '3_6': 50%, '4_6': 66.6666666667%, '5_6': 83.3333333333%,
+   'full': 100%,
+);
+@each $width-name, $width in $widths {
+   .w-#{$width-name} {
+      width: $width;
+   }
+   @each $breakpoint-name, $breakpoint in $breakpoint-sizes {
+      .#{$breakpoint-name}__w-#{$width-name} {
+         @media (min-width: $breakpoint) {
+            width: $width;
+         }
+      }
+   }
+}
