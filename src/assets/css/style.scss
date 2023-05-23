@@ -16,3 +16,19 @@ h1 {
   font-size: 2em;
   color: red !important;
 }
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 1rem;
+  margin: 1rem 0;
+}
+
+.image-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
