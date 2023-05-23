@@ -1,18 +1,13 @@
 @import '../0_Common/fluid-typography.scss';
 
 // TYPOGRAPHY
-
-h1, h2, h3, h4, h5, h6 {
-   margin: 0;
-   padding: 0;
-   font-weight: 500;
-   line-height: 1.2;
-}
-p {
+/* purgecss start ignore */
+h1, h2, h3, h4, h5, h6, p, blockquote {
+   // all: unset;
    margin: 0;
    padding: 0;
 }
-
+/* purgecss end ignore */
 @mixin text-2xl {
    font-size: #{fluid(52px, 80px, $breakpoint-xs, $breakpoint-xl)};
    line-height: #{fluid(56px, 88px, $breakpoint-xs, $breakpoint-xl)};
@@ -86,7 +81,12 @@ h2 {
 h3 {
    @include text-title;
 }
+h4 {
+   @include text-link;
+   margin: 0 !important;
+}
 
 p {
    @include text-paragraph;
 }
+
