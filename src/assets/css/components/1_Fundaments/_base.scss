@@ -1,0 +1,22 @@
+@import '../0_Common/variables.scss';
+@import '../0_Common/functions.scss';
+@import '../0_Common/mixins.scss';
+
+// BASE
+* {
+   box-sizing: border-box;
+}
+html {
+   overflow-x: hidden;
+   font-size: $base-font-size;
+   background-color: $color-surface;
+   color: $color-text;
+}
+body {
+   font-family: $base-font-family;
+   font-size: 1rem;
+   line-height: 1.5;
+   color: $color-text;
+   margin: 0;
+   padding: 0;
+}
