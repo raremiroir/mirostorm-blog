@@ -17,9 +17,19 @@ task('watch', () => {
    console.log('👁️ Watching for changes...');
    console.log('----------------------------------------');
    
-   watch('src/**/*', series('dev:all', 'preview:reload') );
+   watch([
+      'src/assets/css/**/**/*.scss',
+      'src/assets/css/**/*.scss',
+      'src/assets/css/*.scss',
+   ], series('dev:css', 'preview:reload') );
+   watch('src/assets/js/**/*', series('dev:js', 'preview:reload') );
+   watch('src/assets/img/**/*', series('dev:img', 'preview:reload') );
+   watch('src/components/**/*', series('dev:components:js', 'preview:reload') );
+   watch([
+      'src/routes/**/*.html',
+      'src/routes/*.html'
+   ], series('dev:components:html', 'preview:reload') );
    watch( `public/*`, series('preview:reload') );
-
 });
 
 // EXPORT TASKS
