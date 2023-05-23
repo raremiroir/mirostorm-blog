@@ -1,0 +1,23 @@
+// TRANSITIONS
+
+// Transition
+@mixin transition($property, $duration, $timing-function) {
+   -webkit-transition: $property $duration $timing-function;
+   -moz-transition: $property $duration $timing-function;
+   -o-transition: $property $duration $timing-function;
+   transition: $property $duration $timing-function;
+}
+
+
+@mixin transition-fast {
+   @include transition(all, 0.2s, ease-out);
+}
+@mixin transition-md {
+   @include transition(all, 0.3s, ease-out);
+}
+@mixin transition-slow {
+   @include transition(all, 0.5s, ease-out);
+}
+@mixin transition-slowest {
+   @include transition(all, 1s, ease-out);
+}
