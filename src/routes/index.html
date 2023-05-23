@@ -31,21 +31,107 @@
       </div>
    </o-hero>
 
-   <o-section>
-      <span slot="title">FEATURES</span>
+   <o-section title="FEATURES">
       <p slot="subtext">
-         Most calendars are designed for teams. Slate is designed for freelancers who want a simple way to plan their schedule.
+         Most calendars are designed for teams. <br/>
+         Slate is designed for freelancers who want a simple way to plan their schedule.
       </p>
 
-      <!-- IMAGE HERE -->
+      <div class="relative w-full h-full mt-8 mb-12">
+         <img 
+            src="./assets/img/board_chatbot.png" 
+            alt="notifications board screenshot"
+         />
+         <div class="absolute w-full -bottom-16 flex items-center justify-center">
+            <img 
+               class="w-1/2"
+               src="./assets/img/board_linechart.png" 
+               alt="linechart absolute bottom-0 left-"
+            />
+         </div>
+      </div>
 
+      <div class="flex flex-col gap-8 w-2/3 items-center justify-center my-8">
+         <m-card title="A single source of truth" icon="mdi:alien-outline">
+            When you add work to your calendar we automatically calculate useful insights.
+         </m-card>
+
+         <m-card title="Intuitive Interface" icon="mdi:silverware">
+            When you add work to your calendar we automatically calculate useful insights.
+         </m-card>
+
+         <m-card title="Or with rules" icon="mdi:infinity">
+            When you add work to your calendar we automatically calculate useful insights.
+         </m-card>
+      </div>
+   </o-section>
+
+   <o-section title="Content">
+      <p slot="subtext">
+         We focus on ergonomics and meeting you where you work. <br/>
+         It's only a keystroke away.
+      </p>
+
+      <m-card bg="white" customHeader="true">
+         <div class="w-2/3 mx-auto text-center flex flex-col gap-12 py-12">
+            <h3 class="w-2/3 text-center mx-auto flex items-center justify-center text-black text-2xl font-medium">
+               Work
+            </h3>
+            <p class="text-gray-600">
+               Ever wondered if you're too reliant on a client for work? Slate helps you identify.
+            </p>
+            <a-button>
+               Sign Up
+            </a-button>
+            <img 
+               src="./assets/img/macbook-pro.png" 
+               alt="macbook pro"
+            />
+         </div>
+      </m-card>
+
+      <m-card bg="white" customHeader="true">
+         <div class="w-2/3 mx-auto text-center flex flex-col gap-12 py-12">
+            <h3 class="w-2/3 text-center mx-auto flex items-center justify-center text-black text-2xl font-medium">
+               Design with real data
+            </h3>
+            <p class="text-gray-600">
+               Ever wondered if you're too reliant on a client for work? Slate helps you identify.
+            </p>
+            <a-button>
+               Try for Free
+            </a-button>
+            <img 
+               class="rounded-2xl"
+               src="./assets/img/board_notifications.png" 
+               alt="macbook pro"
+            />
+         </div>
+      </m-card>
+   </o-section>
+
+   <o-section title="Gallery">
+      <p slot="subtext">
+         We focus on ergonomics and meeting you where you work. <br/>
+         It's only a keystroke away.
+      </p>
+
+      <div class="image-grid" id="image_grid">
+         <!-- Images will be dynamically added here -->
+      </div>
       
+      <a-button id="image_grid_loadmore" type="outline">
+         Load More
+      </a-button>
+
    </o-section>
 
    <!-- END BODY -->
    
    <!-- Components -->
    <script src="./components.js"></script>
+   <!-- Vendor Scripts -->
+   <script src="./vendor.js"></script>
    <!-- Scripts -->
    <script type="module" src="./assets/app.js"></script>
 </body>
