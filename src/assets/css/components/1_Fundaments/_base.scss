@@ -25,12 +25,6 @@ body {
 
 main {
    margin: 0 auto;
-   width: $container-width;
+   width: $full-width;
    max-width: $breakpoint-xl;
-   @include media-md-up {
-      width: $container-width-tablet;
-   }
-   @include media-lg-up {
-      width: $container-width-desktop;
-   }
 }

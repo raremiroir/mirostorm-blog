@@ -4,10 +4,17 @@
 // SECTION LAYOUT
 
 section {
-   width: $full-width;
    margin: 0 auto;
    padding: $padding-3xl 0;
    @include flex(column, nowrap, center, center, $padding-xl);
+   
+   width: $container-width;
+   @include media-md-up {
+      width: $container-width-tablet;
+   }
+   @include media-lg-up {
+      width: $container-width-desktop;
+   }
 
    .section-header {
       @include flex(column, nowrap, center, center, $padding-md);
