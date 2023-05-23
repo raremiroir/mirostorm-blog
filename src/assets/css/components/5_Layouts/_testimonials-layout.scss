@@ -1,0 +1,41 @@
+@import '../0_Common/index';
+@import '../1_Fundaments/index';
+
+// TESTIMONIALS LAYOUT
+// ignore this file in purgecss as testimonials are dynamically loaded
+/* purgecss start ignore */
+.testimonial {
+
+   &--wrap {
+      @include grid(1fr, 1fr 1fr, $padding-lg);
+      width: $full-width;
+      
+      @include media-md-up {
+         @include grid(1fr 1fr, 1fr 1fr, $padding-lg);
+      }
+   }
+
+   &--item {
+      @include flex(column, nowrap, center, start, $padding-lg);
+      padding: $padding-xl;
+      border-radius: $rounded-md;
+      border: $border-width solid darken($color-secondary, 30%);
+
+      &__head {
+         @include flex(row, nowrap, start, center, $padding-md);
+         img {
+            width: 50px;
+            height: 50px;
+            border-radius: 99999px;
+         }
+         &--details {
+            @include flex(column, nowrap, start, start, 0);
+            color: $color-secondary;
+            h4 {
+               margin: 0;
+            }
+         }
+      }
+   }
+}
+/* purgecss end ignore */
