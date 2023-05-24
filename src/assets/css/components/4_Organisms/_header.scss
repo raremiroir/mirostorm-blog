@@ -1,15 +1,13 @@
-@import '../0_Common/variables.scss';
-@import '../0_Common/functions.scss';
-@import '../0_Common/mixins.scss';
-@import '../1_Fundaments/typography.scss';
+@import '../0_Common/index';
+@import '../1_Fundaments/index';
 
 // HEADER
 
 header {
-   width: $base-width;
+   width: $full-width;
    @include flex(column, none, center, center, 1rem);
    background: linear-gradient(0deg, rgba(14,14,14,1) 0%, rgba(255,255,255,0) 100%);
-   padding: 1rem auto;
+   padding: $padding-6xl 0 $padding-2xl;
 
    h1, p {
       width: $container-width;
