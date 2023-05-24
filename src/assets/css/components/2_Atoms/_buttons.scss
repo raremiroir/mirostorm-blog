@@ -1,7 +1,5 @@
-@import '../0_Common/variables.scss';
-@import '../0_Common/mixins.scss';
-@import '../0_Common/transitions.scss';
-@import '../1_Fundaments/typography.scss';
+@import '../0_Common/index';
+@import '../1_Fundaments/index';
 
 // BUTTONS
 @mixin btn-base {
@@ -9,12 +7,17 @@
    @include transition-fast;
    cursor: pointer;
    border-radius: 0;
-   padding: $padding-md $padding-xl;
    border: $border-width solid;
    color: $color-text;
    text-decoration: none;
    text-align: center;
    display: inline-block;
+   padding: $padding-sm $padding-lg;
+
+   @include media-md-up {
+      padding: $padding-md $padding-xl;
+   }
+
 }
 
 .btn-primary {
