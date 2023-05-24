@@ -17,6 +17,8 @@
 
 <body>
    <!-- BODY -->
+
+   <!-- NAVIGATION -->
    <div class="nav">
       <div class="img-wrap">
          <img src="./assets/img/logo-figmaland.png" alt="logo figmaland" />
@@ -44,29 +46,52 @@
                <li><a href="#contact" class="btn-transp">Contact</a></li>
             </ul>
          </div>
-
       </div>
    </div>
+   <!-- END NAVIGATION -->
 
+
+   <!-- HERO -->
    <header>
       <h1>Work at the speed of thought.</h1>
       <p>
-         Most calendars are designed for teams. Slate is designed for freelancers who want a simple way to plan their schedule.
+         Most calendars are designed for teams. Slate is designed for 
+         freelancers who want a simple way to plan their schedule.
       </p>
 
       <div class="flex-row-lg">
          <button class="btn-primary">Try for Free</button>
-         <button class="btn-outline">Learn More</button>
+         <a href="#section_features" class="btn-outline">Learn More</a>
+      </div>
+
+      <div class="hero__media">
+         <div class="hero__media--overlay">&nbsp;</div>
+         <div class="hero__media--grid">
+            <div class="hero__media--grid--item">
+               <img src="./assets/img/board_dashboard.png" alt="dashboard screenshot" />
+            </div>
+            <div class="hero__media--grid--item">
+               <img src="./assets/img/board_notifications.png" alt="notifications screenshot" />
+            </div>
+            <div class="hero__media--grid--item">
+               <img src="./assets/img/board_chatbot.png" alt="chatbot screenshot" />
+            </div>
+         </div>
       </div>
    </header>
+   <!-- END HERO -->
 
+   
+   <!-- MAIN -->
    <main>
-      <section>
+      <!-- FEATURES SECTION -->
+      <section id="section_features">
          <div class="section-header">
             <h2>FEATURES</h2>
             <p>
                Most calendars are designed for teams. <br/>
-               Slate is designed for freelancers who want a simple way to plan their schedule.
+               Slate is designed for freelancers who want a 
+               simple way to plan their schedule.
             </p>
          </div>
    
@@ -85,30 +110,41 @@
                      <iconify-icon icon="mdi:alien-outline" width="24" height="24"></iconify-icon>
                      <h3>A single source of truth</h3>
                   </div>
-                  <p>When you add work to your calendar we automatically calculate useful insights.</p>
+                  <p>
+                     When you add work to your calendar we automatically 
+                     calculate useful insights.
+                  </p>
                </div>
    
                <div class="card">
                   <div class="card-header">
-                     <iconify-icon icon="mdi:silverware" style="color: #02e4c0;" width="24" height="24"></iconify-icon>
+                     <iconify-icon icon="mdi:silverware" width="24" height="24"></iconify-icon>
                      <h3>Intuitive interface</h3>
                   </div>
-                  <p>When you add work to your calendar we automatically calculate useful insights.</p>
+                  <p>
+                     When you add work to your calendar we automatically 
+                     calculate useful insights.
+                  </p>
                </div>
    
                <div class="card">
                   <div class="card-header">
-                     <iconify-icon icon="mdi:infinity" style="color: #02e4c0;" width="24" height="24"></iconify-icon>
+                     <iconify-icon icon="mdi:infinity" width="24" height="24"></iconify-icon>
                      <h3>Or with rules</h3>
                   </div>
-                  <p>When you add work to your calendar we automatically calculate useful insights.</p>
+                  <p>
+                     When you add work to your calendar we automatically 
+                     calculate useful insights.
+                  </p>
                </div>
             </div>
          </div>
-   
       </section>
-   
-      <section>
+      <!-- END FEATURES SECTION -->
+
+
+      <!-- CONTENT SECTION -->
+      <section id="section_content">
          <div class="section-header">
             <h2>Content</h2>
             <p>
@@ -155,8 +191,11 @@
             </article>
          </div>
       </section>
+      <!-- END CONTENT SECTION -->
 
-      <section>
+
+      <!-- GALLERY SECTION -->
+      <section id="section_gallery">
          <div class="section-header">
             <h2>Gallery</h2>
             <p>
@@ -177,8 +216,11 @@
             </button>
          </div>
       </section>
+      <!-- END GALLERY SECTION -->
 
-      <section>
+
+      <!-- PARTNERS SECTION -->
+      <section id="section_partners">
          <div class="section-header">
             <h2>Partners</h2>
             <p>
@@ -196,8 +238,11 @@
             </button>
          </div>
       </section>
+      <!-- END PARTNERS SECTION -->
 
-      <section>
+
+      <!-- TESTIMONIALS SECTION -->
+      <section id="section_testimonials">
          <div class="section-header">
             <h2>Testimonials</h2>
          </div>
@@ -205,7 +250,10 @@
             <!-- Testimonials will be dynamically loaded here -->
          </div>
       </section>
+      <!-- END TESTIMONIALS SECTION -->
 
+
+      <!-- CALL TO ACTION -->
       <div class="cta">
          <div class="cta--inner">
             <div class="cta--content">
@@ -219,9 +267,13 @@
             </div>
          </div>
       </div>
+      <!-- END CALL TO ACTION -->
    </main>
+   <!-- END MAIN -->
 
-   <footer>
+
+   <!-- FOOTER -->
+   <footer id="footer">
       <div class="footer--cols">
          <div class="footer--cols__item">
             <h3>Fingertips</h3>
@@ -283,6 +335,7 @@
 
       </div>
    </footer>
+   <!-- END FOOTER -->
 
 
    <!-- END BODY -->
