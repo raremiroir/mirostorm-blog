@@ -13,9 +13,19 @@
    background: $color-surface;
    padding: 0 $padding-md;
    z-index: 99;
+
    
    @include media-lg-up {
       @include grid(1fr, 1fr 1fr 1fr, $padding-lg);
+   }
+
+   .img-wrap {
+      max-height: 5rem;
+      @include flex(row, nowrap, start, center, 0);
+      img {
+         height: 100%;
+         width: auto;
+      }
    }
 
    nav {
@@ -30,7 +40,7 @@
 
    .actions {
       @include flex(row, nowrap, end, center, $padding-md);
-      
+
       // Hamburger
       #menu_toggle {
          opacity: 0;
