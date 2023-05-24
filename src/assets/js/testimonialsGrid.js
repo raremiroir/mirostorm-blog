@@ -69,10 +69,8 @@ const createTestimonialElement = (testimonial) => {
 }
 
 const loadTestimonials = () => {
-   var testimonialGrid = document.getElementById('testimonials_grid');
    testimonials.forEach(function(testimonial) {
-      var testimonialItem = createTestimonialElement(testimonial);
-      testimonialGrid.appendChild(testimonialItem);
+      $('#testimonials_grid').append(createTestimonialElement(testimonial));
    });
 }
 

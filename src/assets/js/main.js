@@ -6,15 +6,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 // Hero height
 const defineHeroHeight = () => {
    const heroImgGrid = document.querySelector('.hero__media--grid');
-   const heroImgGridHeight = heroImgGrid.offsetHeight;
-   console.log('heroImgGridHeight:', heroImgGridHeight);
-
-   const heroMedia = document.querySelector('.hero__media');
-   heroMedia.style.height = (heroImgGridHeight * 1.1) + 'px';
-
+   $(".hero__media").css("height", ((heroImgGrid.offsetHeight * 1.1) + 'px'));
    return;
 }
 defineHeroHeight();
-window.addEventListener('resize', () => {
+$(window).resize(function () { 
    defineHeroHeight();
 });

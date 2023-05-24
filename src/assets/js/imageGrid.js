@@ -2,17 +2,17 @@ const images = [
    './assets/img/img_mac.png',
    './assets/img/img_macbook.png',
    './assets/img/img_tablet.png',
-   './assets/img/img_typing.png',
    './assets/img/img_working.png',
    './assets/img/img_camera.png',
    './assets/img/img_code.png',
 ]
 const otherImages = [
+   './assets/img/img_typing.png',
    './assets/img/img_drone.png',
+   './assets/img/img_macbook.png',
    './assets/img/img_headphones.png',
    './assets/img/img_working.png',
    './assets/img/img_ipad.png',
-   './assets/img/img_macbook.png',
 ]
 
 const createImageElement = (src) => {
@@ -27,43 +27,39 @@ const createImageElement = (src) => {
    return imageItem;
 }
 
-const loadMoreBtn = document.getElementById('image_grid_loadmore');
-const loadLessBtn = document.getElementById('image_grid_loadless');
-
 let loadedImages = [];
 
 const firstLoad = () => {
-   var imageGrid = document.getElementById('image_grid');
-   imageGrid.innerHTML = '';
-   loadLessBtn.style.display = 'none';
+   $('#image_grid').html("");
+   $('#image_grid_loadless').hide();
 
-   // Duplicate each item in the images array
+   // Iterate initial images + append
    images.forEach(function(src) {
-      var imageItem = createImageElement(src);
-      imageGrid.appendChild(imageItem);
+      $('#image_grid').append(createImageElement(src));
    });
    loadedImages = images;
 }
 
 const loadMore = () => {
-   var imageGrid = document.getElementById('image_grid');
    if (!loadedImages.includes(otherImages[0])) {
+      // Iterate rest of images + append
       otherImages.forEach(function(src) {
-         var imageItem = createImageElement(src);
-         imageGrid.appendChild(imageItem);
+         $('#image_grid').append(createImageElement(src));
       });
       loadedImages = [...loadedImages, ...otherImages];
    } else {
+      // Duplicate images + append
       loadedImages.forEach(function(src) {
-         var imageItem = createImageElement(src);
-         imageGrid.appendChild(imageItem);
+         $('#image_grid').append(createImageElement(src));
       });
       loadedImages = [...loadedImages, ...loadedImages];
    }
-   loadLessBtn.style.display = 'block';
+   // Show load less button
+   $('#image_grid_loadless').show();
 }
 
-loadMoreBtn.addEventListener('click', loadMore);
-loadLessBtn.addEventListener('click', firstLoad);
+$('#image_grid_loadmore').click(() => loadMore())
+$('#image_grid_loadless').click(() => firstLoad())
+
 
 firstLoad();
