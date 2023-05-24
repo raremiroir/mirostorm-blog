@@ -4,7 +4,7 @@
 // NAVIGATION
 
 .nav {
-   @include grid(1fr, 1fr 1fr, $padding-lg);
+   @include grid(1fr, 1fr 1fr, $padding-xl);
    position: fixed;
    top: 0;
    left: 0;
@@ -15,26 +15,39 @@
    z-index: 99;
 
    
+   @include media-md-up {
+      @include grid(1fr, 1fr 1fr 1fr, $padding-lg);
+   }
    @include media-lg-up {
       @include grid(1fr, 1fr 1fr 1fr, $padding-lg);
+   }
+   @include media-xl-up {
+      width: $container-width;
    }
 
    .img-wrap {
       max-height: 5rem;
       @include flex(row, nowrap, start, center, 0);
       img {
-         height: 100%;
-         width: auto;
+         height: auto;
+         width: 100%;
+         @include media-lg-up {
+            height: 100%;
+            width: auto;
+         }
       }
    }
 
    nav {
       display: none;
-      @include media-lg-up {
+      @include media-md-up {
          display: block;
       }
       ul {
-         @include flex(row, nowrap, center, center, 0);
+         display: none;
+         @include media-lg-up {
+            @include flex(row, nowrap, center, center, 0);
+         }
       }
    }
 
@@ -42,22 +55,103 @@
       @include flex(row, nowrap, end, center, $padding-md);
 
       // Hamburger
-      #menu_toggle {
-         opacity: 0;
-         &:checked + .hamburger--btn > span {
-            transform: rotate(45deg);
-            &::before {
-               top: 0;
-               transform: rotate(0deg);
+      .hamburger {
+         position: relative;
+         width: 56px;
+
+         @include media-lg-up {
+            display: none;
+         }
+
+         #hamburger_toggle {
+            opacity: 0;
+            z-index: 100;
+            &:checked + .hamburger--btn > span {
+               transform: rotate(45deg);
+               &::before {
+                  top: 0;
+                  transform: rotate(0deg);
+               }
+               &::after {
+                  top: 0;
+                  transform: rotate(90deg);
+                  width: 2rem;
+               }
             }
-            &::after {
-               top: 0;
-               transform: rotate(90deg);
+            &:checked ~ .mobile--menu {
+               right: 0 !important;
+            }
+         }
+         .hamburger--btn {
+            position: absolute;
+            right: 14px;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            z-index: 1;
+            span {
+               display: block;
+               position: absolute;
+               background: $color-secondary;
+               width: 1.2rem;
+               height: 0.25rem;
+               margin: 0.8rem 0;
+               @include transition-md;
+               right: 0;
+               &::before,
+               &::after {
+                  content: '';
+                  background: $color-secondary;
+                  right: 0;
+                  height: 0.25rem;
+                  display: block;
+                  position: absolute;
+                  @include transition-md;
+               }
+               &::before {
+                  top: -0.5rem;
+                  width: 2rem;
+               }
+               &::after {
+                  top: 0.5rem;
+                  width: 0.6rem;
+               }
+            }
+         }
+         .mobile--menu {
+            z-index: -1;
+            display:block;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 60vw;
+            height: 100vh;
+            margin: 0;
+            padding: 80px 0;
+            list-style: none;
+            background-color: $color-surface;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+            @include transition-md;
+
+            @include media-md-up {
+               width: 40vw;
+            }
+            @include media-lg-up {
+               display: none;
+            }
+
+            a {
+               display: block;
+               padding: $padding-md $padding-xl;
+               color: $color-text;
+               @include transition-md;
+
+               &:hover {
+                  background-color: $color-secondary;
+                  color: $color-surface;
+               }
             }
          }
       }
-      // .hamburger--btn {
-      // }
    }
-
 }
