@@ -13,6 +13,7 @@
    background: $color-surface;
    padding: 0 $padding-md;
    z-index: 99;
+   margin: 0 auto;
 
    
    @include media-md-up {
