@@ -15,9 +15,10 @@ task('preview:dev', (d) => {
    console.log('🤖 DEV:');
    console.log('👀 Live preview ready!');
    console.log(`👀 http://localhost:3000 to see dev preview!`);
+   console.log(`👀 Press 'CTRL+C' to stop`);
    console.log('----------------------------------------');
    
    series('watch');
    
-   d();                       // Done
+   return d();                       // Done
 });
