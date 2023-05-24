@@ -1,2 +1,53 @@
 @import '../0_Common/index';
 @import '../1_Fundaments/index';
+
+// NAVIGATION
+
+.nav {
+   @include grid(1fr, 1fr 1fr, $padding-lg);
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   width: $full-width;
+   background: $color-surface;
+   padding: 0 $padding-md;
+   z-index: 99;
+   
+   @include media-lg-up {
+      @include grid(1fr, 1fr 1fr 1fr, $padding-lg);
+   }
+
+   nav {
+      display: none;
+      @include media-lg-up {
+         display: block;
+      }
+      ul {
+         @include flex(row, nowrap, center, center, 0);
+      }
+   }
+
+   .actions {
+      @include flex(row, nowrap, end, center, $padding-md);
+      
+      // Hamburger
+      #menu_toggle {
+         opacity: 0;
+         &:checked + .hamburger--btn > span {
+            transform: rotate(45deg);
+            &::before {
+               top: 0;
+               transform: rotate(0deg);
+            }
+            &::after {
+               top: 0;
+               transform: rotate(90deg);
+            }
+         }
+      }
+      // .hamburger--btn {
+      // }
+   }
+
+}
