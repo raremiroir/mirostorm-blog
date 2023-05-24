@@ -4,13 +4,15 @@ const images = [
    './assets/img/img_tablet.png',
    './assets/img/img_typing.png',
    './assets/img/img_working.png',
-]
-const otherImages = [
    './assets/img/img_camera.png',
    './assets/img/img_code.png',
+]
+const otherImages = [
    './assets/img/img_drone.png',
    './assets/img/img_headphones.png',
+   './assets/img/img_working.png',
    './assets/img/img_ipad.png',
+   './assets/img/img_macbook.png',
 ]
 
 const createImageElement = (src) => {
