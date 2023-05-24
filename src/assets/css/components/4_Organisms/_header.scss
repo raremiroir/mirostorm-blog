@@ -4,9 +4,11 @@
 // HEADER
 
 header {
+   position: relative;
    width: $full-width;
-   @include flex(column, none, center, center, 1rem);
-   background: linear-gradient(0deg, rgba(14,14,14,1) 0%, rgba(255,255,255,0) 100%);
+   @include flex(column, nowrap, start, center, 1rem);
+   overflow: hidden;
+   // background: linear-gradient(0deg, rgba(14,14,14,1) 0%, rgba(255,255,255,0) 100%);
    padding: $padding-6xl 0 $padding-2xl;
 
    h1, p {
@@ -16,5 +18,72 @@ header {
    p {
       @include text-subheading;
       margin-top: $spacing-base;
+   }
+
+   .hero__media {
+      position: relative;
+      width: $container-width;
+      height: 35rem; // Height is set according to grid height (check main.js)
+      padding: $padding-3xl 0 0;
+      
+      @include media-md-up {
+         padding: $padding-5xl 0 0;
+      }
+      @include media-lg-up {
+         padding: $padding-6xl 0 0;
+      }
+
+      &--overlay {
+         position: absolute;
+         width: 100vw;
+         height: 50%;
+         bottom: 0;
+         left: 50%;
+         transform: translateX(-50%);
+         z-index: 2;
+         background: linear-gradient(0deg, rgba(14,14,14,1) 0%, rgba(255,255,255,0) 100%);
+      }
+      
+      &--grid {
+         translate: -6.5% 0;
+         rotate: 38.2deg;
+         @include grid(1fr 1fr, 1fr 1fr, $padding-md);
+         
+         @include media-md-up {
+            width: $container-width-tablet;
+            margin: 0 auto;
+         }
+         @include media-lg-up {
+            width: $container-width-desktop;
+            margin: 0 auto;
+         }
+         @include media-xl-up {
+            width: $container-width-sm;
+            max-width: $breakpoint-xl;
+            margin: 0 auto;
+         }
+   
+         &--item {
+            display: flex;
+            aspect-ratio: 1;
+
+            &:first-of-type {
+               transform: rotate(-75deg) skew(15deg, 0deg) translate(0, 28%);
+            }
+            &:nth-of-type(2) {
+               transform: rotate(0) skew(-15deg, 0deg) translate(34%, 0);
+            }
+            &:last-of-type {
+               transform: rotate(0) skew(-15deg, 0deg) translate(0, 0%);
+            }
+   
+            img {
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+            }
+         }
+      }
+
    }
 }
