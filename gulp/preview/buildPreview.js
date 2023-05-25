@@ -9,7 +9,7 @@ task('preview', (d) => {
          baseDir: 'build',
          port: 3000,
       }
-   });
+   })
    d();
    console.log('----------------------------------------');
    console.log('🧱 BUILD:');

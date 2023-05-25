@@ -1,30 +1,33 @@
 'use strict';
 
 const { src, dest, task } = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
-const purgecss = require('gulp-purgecss');
 const cleanCSS = require('gulp-clean-css');
 const config = require('../../gulp-config');
 
 task('build:css', (d) => {
-   src(`${config.paths.src}/assets/css/**/*.scss`)  // Get all scss files
-      .pipe(sass().on('error', sass.logError))      // Parse sass
-      .pipe(concat({ path: 'app.css' }))            // Concat all css files
-      .pipe(purgecss({                              // Purge unused css
-         content: [`${config.paths.src}/**/*.html`],
-      //    defaultExtractor: content => {
-      //       const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || []
-      //       const innerMatches = content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || []
-      //       return broadMatches.concat(innerMatches)
-      //    }
-      }))
-      .pipe(cleanCSS())                              // Minify css
-      .pipe(dest(`${config.paths.build}/assets/`)); // Output to build folder
-   console.log('----------------------------------------');
-   console.log('🧱 BUILD:');
-   console.log(`📦 CSS minified! (find in /${config.paths.build})`);
-   console.log('----------------------------------------');
-   return d();                                             // Done
 
-})
+   console.log(`
+            ----------------------------------------
+            🧱 BUILD:
+            📦 Minifying CSS...
+            📦 ... please wait ...
+            ----------------------------------------
+         `);
+
+   src([
+      `${config.paths.dist}/assets/global.css`, // Include css files
+   ])
+      .pipe(concat({ path: 'app.min.css' }))        // Concat all css files
+      .pipe(cleanCSS())                         // Minify css
+      .pipe(dest(`${config.paths.build}/`))     // Output to build folder
+      .on('end', () => {
+         console.log(`
+            ----------------------------------------
+            🧱 BUILD:
+            📦 CSS minified! (find in /${config.paths.build}/app.css)
+            ----------------------------------------
+         `);
+         d();
+      });
+});
