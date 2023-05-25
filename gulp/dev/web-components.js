@@ -15,7 +15,7 @@ task('dev:components', (d) => {
             ----------------------------------------
          `);
 
-   src(`${config.paths.src}/components/**/*.js`)   // Get all js web components
+   src(`${config.paths.src}/assets/js/components/**/*.js`)   // Get all js web components
       .pipe(concat({ path: 'components.js' }))     // Concat all js files
       .pipe(uglify())                              // Uglify js
       .pipe(dest(`${config.paths.dist}/assets/`))         // Output to dist folder
