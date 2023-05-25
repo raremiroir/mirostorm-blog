@@ -1,0 +1,59 @@
+@use 'sass:math';
+@import '../0_Common/index';
+@import '../1_Fundaments/index';
+
+
+$color-bg: lighten($color-surface, 10%);
+$size: 8rem;
+$gap: math.div($size, 14);
+$duration: 30s;
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+  gap: $gap;
+  
+  &--content {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: $gap;
+    min-width: 60%;
+
+    @include media-md-up {
+      min-width: 80%;
+    }
+    @include media-lg-up {
+      min-width: 100%;
+    }
+
+    animation: scroll $duration linear infinite;
+    @media (prefers-reduced-motion: reduce) {
+      animation-play-state: paused;
+    }
+    & > * {
+      flex: 0 0 auto;
+      place-items: center;
+      width: $size;
+      background: $color-bg;
+      padding: math.div($size, 10);
+      border-radius: 0.5rem;
+    }
+    img {
+      aspect-ratio: 1;
+    }
+  }
+}
+
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - $gap));
+  }
+}
