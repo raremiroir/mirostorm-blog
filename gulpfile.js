@@ -5,17 +5,36 @@ requireDir('./gulp');
 requireDir('./gulp/dev');
 requireDir('./gulp/build');
 requireDir('./gulp/preview');
-requireDir('./gulp/dev/components');
 
-// COMPONENTS
-task('dev:components', series('dev:components:html', 'dev:components:js'));
+// Default task --> Run intro
+exports.default = series('intro');
 
-// WATCHER
-task('watch', () => {
-   console.log('----------------------------------------');
-   console.log('🤖 DEV:');
-   console.log('👁️ Watching for changes...');
-   console.log('----------------------------------------');
+/* =============
+      BASE
+============= */
+task('clean', series('dev:clean', 'build:clean'));
+
+/* =============
+      DEV
+============= */
+// Parse HTML
+task('dev:html', series('dev:components', 'dev:routes'));
+// Run all dev parsers
+task('dev:all', series(
+   'dev:html',
+   'dev:css',
+   'dev:js',
+   'dev:img',
+));
+
+// Watcher
+task('watch', (d) => {
+   console.log(`
+      ----------------------------------------
+      🤖 DEV:
+      👁️  Watching for changes...
+      ----------------------------------------
+   `);
    
    watch([
       'src/assets/css/**/**/*.scss',
@@ -24,30 +43,35 @@ task('watch', () => {
    ], series('dev:css', 'preview:reload') );
    watch('src/assets/js/**/*', series('dev:js', 'preview:reload') );
    watch('src/assets/img/**/*', series('dev:img', 'preview:reload') );
-   watch('src/components/**/*', series('dev:components:js', 'preview:reload') );
+   watch('src/components/**/*', series('dev:components', 'preview:reload') );
    watch([
       'src/routes/**/*.html',
       'src/routes/*.html'
-   ], series('dev:components:html', 'preview:reload') );
-   watch( `public/*`, series('preview:reload') );
+   ], series('dev:routes', 'preview:reload') );
+   // watch( `public/*`, series('preview:reload') );
+   d();
 });
 
-// EXPORT TASKS
-task('clean', series('dev:clean', 'build:clean'));
-
-task('dev:all', parallel('dev:css', 'dev:js', 'dev:img', 'dev:components'));
-task('build:all', parallel('build:css', 'build:js', 'build:img', 'build:components'));
-
-exports.dev = series(
+// Run dev parsers and start preview server
+task('dev', series(
    'dev:all',
    'preview:dev',
    'watch'
-)
+));
 
-exports.build = series(
-   'build:clean',
+/* =============
+     BUILD
+============= */
+task('build:all', series(
+   'dev:all',
+   'build:html',
+   'build:css',
+   'build:js',
+   'build:img',
+));
+
+task('build', series(
+   'clean',
    'build:all',
    'build:finish'
-)
-
-exports.default = series('intro');
+));
