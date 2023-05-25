@@ -25,31 +25,3 @@
   grid-template-columns: $template-columns;
   gap: $gap;
 }
-// Responsive grid generator
-@mixin responsive-grid($template-rows, $template-columns, $gap) {
-  display: grid;
-  grid-template-rows: $template-columns;
-  grid-template-columns: $template-rows;
-  gap: $gap;
-  @media screen and (min-width: $breakpoint-md) {
-    grid-template-rows: $template-rows;
-    grid-template-columns: $template-columns;
-    gap: $gap;
-  }
-}
-
-// Box shadow
-@mixin box-shadow($x, $y, $blur, $spread, $color) {
-  -webkit-box-shadow: $x $y $blur $spread $color;
-  -moz-box-shadow: $x $y $blur $spread $color;
-  box-shadow: $x $y $blur $spread $color;
-}
-
-// Prefixing
-@mixin prefix($property, $value) {
-  -webkit-#{$property}: $value;
-  -moz-#{$property}: $value;
-  -ms-#{$property}: $value;
-  -o-#{$property}: $value;
-  #{$property}: $value;
-}
