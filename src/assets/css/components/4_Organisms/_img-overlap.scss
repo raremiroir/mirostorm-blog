@@ -29,6 +29,20 @@
       img {
          width: 50%;
       }
+      
+      @include media-lg-up	{
+         bottom: #{$padding-3xl};
+         img {
+            width: 70%;
+         }
+      }
+      @include media-xl-up	{
+         bottom: -#{$padding-xl};
+         img {
+            width: 50%;
+         }
+      }
+
    }
 }
 
