@@ -7,7 +7,7 @@
 .testimonial {
 
    &--wrap {
-      @include grid(1fr, 1fr 1fr, $padding-lg);
+      @include flex(column, nowrap, center, start, $padding-lg);
       width: $full-width;
       
       @include media-md-up {
