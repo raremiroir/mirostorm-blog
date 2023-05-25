@@ -1,0 +1,26 @@
+@import '../0_Common/index';
+@import '../1_Fundaments/index';
+
+// FEATURES LAYOUT
+
+.features--layout {
+   @include flex(column, nowrap, center, start, $padding-lg);
+   width: $full-width;
+   
+   @include media-lg-up {
+      @include grid(1fr, 1fr 1fr 1fr, $padding-lg);
+   }
+
+   div {
+      &:first-of-type {
+         @include media-lg-up {
+            grid-area: 1 / 1 / 2 / 3;
+         }
+      }
+      &:last-of-type {
+         @include media-lg-up {
+            grid-area: 1 / 3 / 2 / 4;
+         }
+      }
+   }
+}
