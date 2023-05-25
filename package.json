@@ -50,6 +50,7 @@
     "gulp-purgecss": "^5.0.0",
     "gulp-replace": "^1.1.4",
     "gulp-sass": "^5.1.0",
+    "gulp-strip-css-comments": "^2.0.0",
     "gulp-terser": "^2.1.0",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-pngquant": "^9.0.2",
