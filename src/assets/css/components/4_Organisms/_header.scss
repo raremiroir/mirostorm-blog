@@ -58,7 +58,7 @@ header {
             margin: 0 auto;
          }
          @include media-xl-up {
-            width: $container-width-sm;
+            width: 40%;
             max-width: $breakpoint-xl;
             margin: 0 auto;
          }
