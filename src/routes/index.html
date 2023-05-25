@@ -10,8 +10,11 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   
    <!-- Style -->
-   <link rel="stylesheet" href="./assets/app.css">
+   <!-- build:css -->
+   <link rel="stylesheet" href="./assets/global.css">
+   <!-- endbuild -->
 
    <!-- JQuery -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -23,7 +26,9 @@
    <!-- NAVIGATION -->
    <div class="nav">
       <a href="#" class="img-wrap">
-         <img src="./assets/img/logo-figmaland.png" alt="logo figmaland" />
+         <!-- build:img -->
+            <img src="./assets/img/logo-figmaland.png" alt="logo figmaland" />
+         <!-- endbuild -->
       </a>
       <nav>
          <ul>
@@ -69,6 +74,7 @@
       <div class="hero__media">
          <div class="hero__media--overlay">&nbsp;</div>
          <div class="hero__media--grid">
+            <!-- build:img -->
             <div class="hero__media--grid--item">
                <img src="./assets/img/board_dashboard.png" alt="dashboard screenshot" />
             </div>
@@ -78,6 +84,7 @@
             <div class="hero__media--grid--item">
                <img src="./assets/img/board_chatbot.png" alt="chatbot screenshot" />
             </div>
+            <!-- endbuild -->
          </div>
       </div>
    </header>
@@ -99,10 +106,12 @@
    
          <div class="features--layout">
             <div class="img-overlap">
+               <!-- build:img -->
                <img src="./assets/img/board_chatbot.png" alt="notifications board screenshot" />
                <div class="overlapper">
                   <img src="./assets/img/board_linechart.png" alt="linechart absolute bottom-0 left-" />
                </div>
+               <!-- endbuild -->
             </div>
       
             <div class="flex-col-between-center-lg">
@@ -166,11 +175,13 @@
                   Sign Up
                </button>
       
-               <div class="img-wrap">
+               <div class="img-wrap">         
+                  <!-- build:img -->
                   <img 
                      src="./assets/img/macbook-pro.png" 
                      alt="macbook pro"
                   />
+                  <!-- endbuild -->
                </div>
             </article>
       
@@ -185,10 +196,12 @@
                   Try for Free
                </button>
                <div class="img-wrap">
+                  <!-- build:img -->
                   <img 
                      src="./assets/img/board_notifications.png" 
                      alt="notifications board screenshot"
                   />
+                  <!-- endbuild -->
                </div>
             </article>
          </div>
@@ -232,6 +245,7 @@
          </div>
          <div class="marquee">
             <div class="marquee--content">
+               <!-- build:img -->
                <img title="Apple App Store" src="./assets/img/svg/logos_apple-app-store.svg" alt="Apple App Store" />
                <img title="Apiary" src="./assets/img/svg/logos_apiary.svg" alt="Apiary" />
                <img title="Android" src="./assets/img/svg/logos_android.svg" alt="Android" />
@@ -240,8 +254,10 @@
                <img title="IBM" src="./assets/img/svg/logos_ibm.svg" alt="IBM" />
                <img title="Google" src="./assets/img/svg/logos_google.svg" alt="Google" />
                <img title="Svelte" src="./assets/img/svg/logos_svelte.svg" alt="Svelte" />
+               <!-- endbuild -->
             </div>
             <div class="marquee--content" aria-hidden="true">
+               <!-- build:img -->
                <img title="Apple App Store" src="./assets/img/svg/logos_apple-app-store.svg" alt="Apple App Store" />
                <img title="Apiary" src="./assets/img/svg/logos_apiary.svg" alt="Apiary" />
                <img title="Android" src="./assets/img/svg/logos_android.svg" alt="Android" />
@@ -250,6 +266,7 @@
                <img title="IBM" src="./assets/img/svg/logos_ibm.svg" alt="IBM" />
                <img title="Google" src="./assets/img/svg/logos_google.svg" alt="Google" />
                <img title="Svelte" src="./assets/img/svg/logos_svelte.svg" alt="Svelte" />
+               <!-- endbuild -->
             </div>
          </div>
          
@@ -284,7 +301,9 @@
                </button>
             </div>
             <div class="cta--media">
+               <!-- build:img -->
                <img src="./assets/img/cta-try-now.png" alt="try slate now" />
+               <!-- endbuild -->
             </div>
          </div>
       </div>
@@ -361,11 +380,13 @@
 
    <!-- END BODY -->
    
+   <!-- build:js -->
    <!-- Components -->
-   <script src="./components.js"></script>
+   <script src="./assets/components.js"></script>
    <!-- Vendor Scripts -->
-   <script src="./vendor.js"></script>
+   <script src="./assets/vendor.js"></script>
    <!-- Scripts -->
-   <script type="module" src="./assets/app.js"></script>
+   <script type="module" src="./assets/main.js"></script>
+   <!-- endbuild -->
 </body>
 </html>
